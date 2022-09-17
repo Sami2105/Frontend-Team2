@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import MenuAppBar from '../components/Navbar'
 import styles from '../styles/Home.module.css'
-import CarouselComponent from '../components/Carousel'
 
 export default function Home() {
   return (
@@ -20,10 +19,7 @@ export default function Home() {
         </MenuAppBar>
       </header>
 
-      <br></br>
-      <div>
-        <CarouselComponent></CarouselComponent>
-      </div>
+
       <main className={styles.main}>
 
         <div className={styles.grid}>
