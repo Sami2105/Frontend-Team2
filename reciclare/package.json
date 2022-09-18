@@ -15,7 +15,9 @@
     "prop-types": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.35.0",
     "react-responsive-carousel": "^3.2.23",
+    "react-social-login-buttons": "^3.6.1",
     "styled-components": "^5.3.5"
   },
   "scripts": {
