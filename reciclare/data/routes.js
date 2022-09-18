@@ -7,6 +7,7 @@ export const routes = [
   { name: "Eu donez, tu folosesti", link: "/EuDonezTuFolosesti" },
   { name: "Raporteaza probleme", link: "/RaporteazaProbleme" },
   { name: "Campanii de reciclare", link: "/CampaniiReciclare" },
-  { name: "About", link: "/about" },
-  // { name: "path name", link: "link url" }, like this
+  { name: "Inregistrare", link: "/Inregistrare" },
+  { name: "LogIn", link: "/LogIn" },
+   // { name: "path name", link: "link url" }, like this
 ];
