@@ -4,6 +4,7 @@ import Image from 'next/image';
 import logo from '/images/Logo.png';
 
 
+
 export default function CarouselComponent() {
     return (
         <div className="carousel-wrapper" >
