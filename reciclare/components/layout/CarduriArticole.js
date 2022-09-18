@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 
 export default function ImgMediaCard() {
   return (
+   
     <Card sx={{ maxWidth: 345 }}>
        <Image alt="Logo" src={logo} />
       <CardContent>
