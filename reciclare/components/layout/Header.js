@@ -18,7 +18,8 @@ import {
   IconButton,
 } from "@material-ui/core";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-
+import logo from '/images/Logo.png';
+import Image from 'next/image';
 import MenuIcon from "@material-ui/icons/Menu";
 
 import { routes } from "data/routes";
@@ -103,7 +104,7 @@ const Header = () => {
                 className={classes.link}
                 style={{
                   fontWeight: router.pathname === link && "bold",
-                  borderBottom: router.pathname === link && "1px solid #757ce8",
+                  borderBottom: router.pathname === link && "1px solid #e3e6d5",
                 }}
               >
                 {name}
@@ -203,7 +204,8 @@ const Header = () => {
             }}
           >
             <Link href="/">
-              <Typography className={classes.logo}>Go Green</Typography>
+            <Image alt="logo" src={logo} width={65} height={65}/>       
+
             </Link>
             {matches ? drawer : tabs}
           </Toolbar>

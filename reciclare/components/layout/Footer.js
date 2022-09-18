@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
   link: {
     fontSize: "1.25em",
-    color: "#fff",
+    color: "#000000",
     "&:hover": {
       color: theme.palette.info.main,
     },
@@ -43,7 +43,7 @@ const Footer = () => {
                   style={{
                     fontWeight: router.pathname === link && "bold",
                     borderBottom:
-                      router.pathname === link && "1px solid #757ce8",
+                      router.pathname === link && "1px solid #e3e6d5",
                   }}
                 >
                   {name}

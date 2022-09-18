@@ -30,17 +30,7 @@ const About = () => {
       // type your page title and page description.
       title="Template - Next.js and Material-UI with Header and Footer"
       description="This is a Template using Next.js and Material-UI with Header and Footer."
-    ><Container maxWidth="md">
-        <Typography
-          variant="h1"
-          align="center"
-          gutterBottom
-          style={{ marginBottom: "1em" }}
-        >
-          Despre reciclare-benificiile pe care le aduce naturii
-        </Typography>
-      
-      </Container>
+    >
       <CarouselComponent></CarouselComponent>
 
       <Grid container spacing={8} justify="center" style={{ margin: "1.2em 0" }}>
