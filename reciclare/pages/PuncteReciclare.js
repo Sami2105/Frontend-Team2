@@ -1,8 +1,16 @@
 import Layout from "components/layout/Layout";
-
-
-import { Container, Grid, Typography, Avatar } from "@material-ui/core";
+import { Container, Grid, Typography, Avatar, Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+
+
+import * as React from 'react';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import ListItemText from '@mui/material/ListItemText';
+import BeachAccessIcon from '@mui/icons-material/BeachAccess';
+import Divider from '@mui/material/Divider';
+
 
 const useStyles = makeStyles((theme) => ({
   snsIcon: {
@@ -23,38 +31,57 @@ const useStyles = makeStyles((theme) => ({
 const PuncteReciclare = () => {
   const classes = useStyles();
   // use your picture
- 
+  
+  
   return (
+   
+          
     <Layout
       // type your page title and page description.
-      title=" Puncte de reciclare "
-      description="Gaseste cele mai aproapiate puncte de colectare"
-    >
-      <Container maxWidth="md">
-        <Grid container direction="column" spacing={8}>
-          <Grid item>
+      title=" Puncte de reciclare ">
+
             <Typography variant="h1" align="center" gutterBottom>
             Puncte de reciclare 
-            </Typography>
-            <Typography variant="h2" align="center">
-            Gaseste cele mai aproapiate puncte de colectare
-            </Typography>
-          </Grid>
-          <Grid item container spacing={2} alignItems="center">
-            <Grid
-              item
-              container
-              md={4}
-              direction="column"
-              alignItems="center"
-              spacing={2}
-            >
-             
-            </Grid>
+            </Typography>      
+        
+        
+            
+
+          <Grid   align="right" >
+            
+          <List sx={{
+        width: '100%',
+        maxWidth: 360,
+        bgcolor: 'background.paper',
+      }}
+    >
+      <Divider component="li" />
+      <ListItem>
+        <ListItemText primary="Firma1" secondary="Telefon: 07xx xxx xxx" />
+      </ListItem>
+
+      <Divider component="li" />
+      <ListItem>
+        <ListItemText primary="Firma2" secondary="Telefon: 07xx xxx xxx" />
+      </ListItem>
+
+      <Divider component="li" />
+      <ListItem>
+        <ListItemText primary="Firma3" secondary="Telefon: 07xx xxx xxx" />
+      </ListItem>
+
+      <Divider component="li" />
+      <ListItem>
+        <ListItemText primary="Firma4" secondary="Telefon: 07xx xxx xxx" />
+      </ListItem>
+    </List>
+
+    
             
           </Grid>
-        </Grid>
-      </Container>
+
+         
+      
     </Layout>
   );
 };

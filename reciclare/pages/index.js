@@ -40,12 +40,12 @@ const About = () => {
            Avem nevoie de oameni dedicati vin-o in echipa noastra. 
            Putem sesiza probleme, invata impreuna despre recilat si pe langa acestea putem schimba obiecte intre noi.
                       </h4>
-                      <Button variant="contained">Sign Up</Button>
+                      <Button variant="contained" href="/Inregistrare">Sign Up</Button>
            </Grid>
            <Grid item xs={4} >
            <h4 className="text-xl mb-1 font-semibold">
            Tu reciclezi, firmele te premiaza. Afla despre campaniile de reciclare.                       </h4>
-                      <Button variant="contained">Campanii active</Button>
+                      <Button variant="contained" href="/CampaniiReciclare">Campanii active</Button>
           </Grid>
           
         </Grid>
@@ -55,13 +55,13 @@ const About = () => {
           <h4 className="text-xl mb-1 font-semibold">
           Afla unde sunt cele mai apropiate puncte de colectare.  
                       </h4>
-                      <Button variant="contained">Puncte de colectare</Button>
+                      <Button variant="contained" href="/PuncteReciclare">Puncte de colectare</Button>
           </Grid>
           <Grid item xs={4}>
           <h4 className="text-xl mb-1 font-semibold">
           Pune un anunt sau colecteaza produsele oferite de alte persoane.
                       </h4>
-                      <Button variant="contained">Forum</Button>
+                      <Button variant="contained" href="/EuDonezTuFolosesti">Forum</Button>
           </Grid>
           </Grid>
       
@@ -86,10 +86,6 @@ const About = () => {
           <Grid item xs={2}>
           <ImgMediaCard></ImgMediaCard></Grid>
         </Grid>
-  
-  
-
-
 
     </Layout>
   );
