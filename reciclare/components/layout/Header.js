@@ -96,8 +96,13 @@ const Header = () => {
 
   const tabs = (
     <>
-      <Grid container justify="flex-end" spacing={4}>
+     <Grid container justify="flex-end" spacing={4}>
+      <Link href="/">
+            <Image alt="logo"  href="http://localhost:3000/index"  src={logo} width={56} height={56}/>       
+
+            </Link>
         {path.map(({ name, link }) => (
+          
           <Grid item key={link}>
             <Link href={link}>
               <Typography
@@ -110,9 +115,6 @@ const Header = () => {
                 {name}
               </Typography>
             </Link>
-            
-               
-              
           </Grid> 
         ))}
     

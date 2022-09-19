@@ -9,5 +9,6 @@ export const routes = [
   { name: "Campanii de reciclare", link: "/CampaniiReciclare" },
   { name: "Inregistrare", link: "/Inregistrare" },
   { name: "LogIn", link: "/LogIn" },
+  { name: "AdaugaAnunt", link: "/AdaugaAnunt" },
    // { name: "path name", link: "link url" }, like this
 ];
