@@ -22,9 +22,9 @@ const Inregistrare= () => {
     >
 
 
-         <Grid container spacing={8} justify="left" style={{ margin: "1em 1.5em" }}>
+         <Grid container spacing={8}  style={{ margin: "1em 1.5em" }}>
 
-        <Grid item spacing={8} justify="left" style={{ margin: "5em 1.5em" }}>
+        <Grid item spacing={8}  style={{ margin: "5em 1.5em" }}>
            
            <h2 className="text-xl mb-1 font-semibold">
            GO GREEN este soluția pentru o lume mai bună
@@ -38,19 +38,16 @@ const Inregistrare= () => {
                       <h4 className="text-xl mb-1 font-semibold">
            GO GREEN este soluția pentru o lume mai bună
                       </h4>
-                     
-         
-
+  
           
         </Grid>
 
-        <Grid item spacing={12} justify="left" style={{ margin: "2em 2em" }}>
+        <Grid item spacing={10} style={{ margin: "2em 2em" }}>
            
-          
-          
+        
         </Grid>
         
-        <Grid item spacing={12} justify="center" style={{ margin: "0 2em" }}>
+        <Grid item spacing={10}  style={{ margin: "0 2em" }}>
         
         
         <Grid container spacing={8} >
@@ -63,9 +60,9 @@ const Inregistrare= () => {
       autoComplete="off"
        
     >
-        <div style={{ margin: "0 13em" }} justify="right">
+        <div style={{ margin: "0 13em" }} >
         <Image alt="Logo" src={logo} width={90} height={90} /></div>
-        <div style={{ margin: "1.2em 8em" }} justify="right">
+        <div style={{ margin: "1.2em 8em" }} >
            <Typography  variant="h5" component="div">
         Creează un cont nou
         </Typography> </div>

@@ -22,7 +22,7 @@ const LogIn= () => {
 
          <Grid container spacing={8} justify="center" style={{ margin: "1em 1.5em" }}>
 
-        <Grid item spacing={12} justify="center" style={{ margin: "0 2em" }}>
+        <Grid item spacing={10} style={{ margin: "0 2em" }}>
         
     
         <Box
@@ -36,9 +36,9 @@ const LogIn= () => {
       
        
     >
-        <div style={{ margin: "0 13em" }} justify="right">
+        <div style={{ margin: "0 13em" }}>
         <Image alt="Logo" src={logo} width={80} height={80} /></div>
-        <div style={{ margin: "1.2em 10em" }} justify="right">
+        <div style={{ margin: "1.2em 10em" }} >
            <Typography  variant="h1" component="div">
         Logare cont
         </Typography> </div>
@@ -85,7 +85,7 @@ const LogIn= () => {
       <InstagramLoginButton onClick={() => alert("Hello")} />
       
       </div>
-      <div style={{ margin: "1.2em 8em" , color: "blue"}} justify="right">
+      <div style={{ margin: "1.2em 8em" , color: "blue"}} >
            <Typography  variant="h5" component="div">
         Nu ai un cont? <Link style= {{color: "blue"}} href="/Inregistrare" underline="hover">
   {'Inregistrare'}

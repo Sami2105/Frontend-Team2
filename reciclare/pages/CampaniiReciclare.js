@@ -31,23 +31,23 @@ const CampaniiReciclare = () => {
       description="Gaseste cele mai aproapiate puncte de colectare"
     >
       <Container maxWidth="md">
-        <Grid container direction="column" spacing={8}>
+        <Grid container direction="column" >
           <Grid item>
             <Typography variant="h1" align="center" gutterBottom>
-            CampaniiReciclare 
+            Campanii Reciclare 
             </Typography>
             <Typography variant="h2" align="center">
             Gaseste cele mai aproapiate puncte de colectare
             </Typography>
           </Grid>
-          <Grid item container spacing={2} alignItems="center">
+          <Grid item container  alignItems="center">
             <Grid
               item
               container
               md={4}
               direction="column"
               alignItems="center"
-              spacing={2}
+              
             >
              
               <Grid item>

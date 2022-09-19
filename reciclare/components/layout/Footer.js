@@ -1,10 +1,7 @@
 import Link from "components/Link";
 import { useRouter } from "next/router";
-
 import { makeStyles } from "@material-ui/core/styles";
-
 import { Container, Grid, Typography } from "@material-ui/core";
-
 import { routes } from "data/routes";
 
 
@@ -34,7 +31,7 @@ const Footer = () => {
   return (
     <footer className={classes.footer}>
       <Container maxWidth="lg">
-        <Grid container spacing={3} justify="center">
+        <Grid container spacing={3} >
           {path.map(({ name, link }) => (
             <Grid item key={link}>
               <Link href={link}>
@@ -57,7 +54,7 @@ const Footer = () => {
         </Grid>
         <Grid
           item
-          justify="center"
+          
           style={{
             textDecoration: "none",
           }}

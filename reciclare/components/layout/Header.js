@@ -117,7 +117,7 @@ const Header = () => {
         ))}
     
                 <IconButton
-                size="large"
+                
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
@@ -129,7 +129,7 @@ const Header = () => {
               </IconButton>
 
                 <IconButton
-                size="large"
+               
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
