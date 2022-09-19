@@ -21,6 +21,7 @@ import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import logo from '/images/Logo.png';
 import Image from 'next/image';
 import MenuIcon from "@material-ui/icons/Menu";
+import AccountMenu from "./AccountMenu";
 
 import { routes } from "data/routes";
 
@@ -137,7 +138,7 @@ const Header = () => {
                 aria-haspopup="true"
                 color="inherit"
               >
-                <AccountCircle />
+               <AccountMenu />
               </IconButton>
       </Grid>
     </>
@@ -205,10 +206,6 @@ const Header = () => {
               padding: matches ? "0 16px" : "24px",
             }}
           >
-            <Link href="/">
-            <Image alt="logo" src={logo} width={65} height={65}/>       
-
-            </Link>
             {matches ? drawer : tabs}
           </Toolbar>
         </AppBar>
