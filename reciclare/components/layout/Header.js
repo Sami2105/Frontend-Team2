@@ -99,7 +99,7 @@ const Header = () => {
     <>
      <Grid container justify="flex-end" spacing={4}>
       <Link href="/">
-            <Image alt="logo"  href="http://localhost:3000/index"  src={logo} width={56} height={56}/>       
+            <Image alt="logo"  href="/"  src={logo} width={56} height={56}/>       
 
             </Link>
         {path.map(({ name, link }) => (
@@ -130,16 +130,8 @@ const Header = () => {
                 <Badge badgeContent={17} color="error">
                 <NotificationsIcon /></Badge>
               </IconButton>
-
-                <IconButton
-               
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                color="inherit"
-              >
-               <AccountMenu />
-              </IconButton>
+              
+              <AccountMenu />
       </Grid>
     </>
   );
