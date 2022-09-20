@@ -27,8 +27,8 @@ const CampaniiReciclare = () => {
   return (
     <Layout
       // type your page title and page description.
-      title=" Puncte de reciclare "
-      description="Gaseste cele mai aproapiate puncte de colectare"
+      title="Campanii de reciclare"
+      description="Aici găsești campanii cu si despre reciclare. Implică-te!"
     >
       <Container maxWidth="md">
         <Grid container direction="column" >

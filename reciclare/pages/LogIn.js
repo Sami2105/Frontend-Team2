@@ -7,7 +7,7 @@ import { Container, Grid, Typography, Avatar } from "@material-ui/core";
 import { FacebookLoginButton, GoogleLoginButton, InstagramLoginButton } from "react-social-login-buttons";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-
+import Button from '@mui/material/Button';
 
 const LogIn= () => {
     
@@ -15,12 +15,12 @@ const LogIn= () => {
     return (
         <Layout
       // type your page title and page description.
-      title=" Puncte de reciclare "
-      description="Gaseste cele mai aproapiate puncte de colectare"
+      title="Logare"
+      description="Logare"
     >
 
 
-         <Grid container spacing={8} justify="center" style={{ margin: "1em 1.5em" }}>
+         <Grid container justify="center" style={{ margin: "0em 1.5em" }}>
 
         <Grid item spacing={10} style={{ margin: "0 2em" }}>
         
@@ -36,10 +36,10 @@ const LogIn= () => {
       
        
     >
-        <div style={{ margin: "0 13em" }}>
-        <Image alt="Logo" src={logo} width={80} height={80} /></div>
+        <div style={{ margin: "0 18em" }}>
+        <Image alt="Logo" align="center" src={logo} width={80} height={80} /></div>
         <div style={{ margin: "1.2em 10em" }} >
-           <Typography  variant="h1" component="div">
+           <Typography align="center" variant="h1" component="div">
         Logare cont
         </Typography> </div>
         <div>
@@ -62,14 +62,16 @@ const LogIn= () => {
         />
         
       </div>
-      <div className='form-group p-4' style={{ margin: "1.2em 14em" }}>
-        <input type="submit" className='btn btn-success'/>
+      <div className='form-group p-4'>
+      <Button 
+                            style = {{width: ' 40em',height: '8ch' }}
+                            variant="outlined" href="/" >Logare</Button>
       
       </div>
 
-      <div style={{ margin: "1.2em 14em" }} >
-           <Typography  variant="h5" component="div">
-       SAU
+      <div style={{ margin: "0.8em 18.5em" }} >
+           <Typography  variant="h6" component="div">
+           SAU
         </Typography> </div>
 
         <div className='form-group p-4'>
@@ -85,12 +87,12 @@ const LogIn= () => {
       <InstagramLoginButton onClick={() => alert("Hello")} />
       
       </div>
-      <div style={{ margin: "1.2em 8em" , color: "blue"}} >
-           <Typography  variant="h5" component="div">
-        Nu ai un cont? <Link style= {{color: "blue"}} href="/Inregistrare" underline="hover">
-  {'Inregistrare'}
-</Link>
-        </Typography> </div>
+
+      <div align=" center" style={{ margin: "2em 10em" , color: "black"}} >
+           <Typography align=" center" variant="h5" component="div">
+        Nu ai un cont? <a style={{ color: "blue"}} href="/Inregistrare" >{'Inregistrare'}</a>
+            </Typography> 
+      </div>
       
     </Box>
           </Grid>

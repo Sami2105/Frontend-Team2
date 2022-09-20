@@ -17,8 +17,8 @@ const Inregistrare= () => {
     return (
         <Layout
       // type your page title and page description.
-      title=" Puncte de reciclare "
-      description="Gaseste cele mai aproapiate puncte de colectare"
+      title="Inregistrare"
+      description="Inregistreaza-te"
     >
 
 

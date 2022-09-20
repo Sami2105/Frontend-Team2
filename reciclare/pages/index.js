@@ -28,8 +28,8 @@ const About = () => {
   return (
     <Layout
       // type your page title and page description.
-      title="Template - Next.js and Material-UI with Header and Footer"
-      description="This is a Template using Next.js and Material-UI with Header and Footer."
+      title="Go green"
+      description="Echipa Go Green își dorește o țără mai frumoasă"
     >
       <CarouselComponent></CarouselComponent>
 
@@ -61,7 +61,7 @@ const About = () => {
           <h4 className="text-xl mb-1 font-semibold">
           Pune un anunt sau colecteaza produsele oferite de alte persoane.
                       </h4>
-                      <Button variant="contained" href="/EuDonezTuFolosesti">Forum</Button>
+                      <Button variant="contained" href="/Anunturi">Forum</Button>
           </Grid>
           </Grid>
       

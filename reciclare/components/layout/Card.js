@@ -22,7 +22,7 @@ export default function ComplexGrid() {
       sx={{
         p: 4,
         margin: 'auto',
-        maxWidth: 650,
+        maxWidth: 600,
         flexGrow: 1,
         backgroundColor: (theme) =>
           theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
