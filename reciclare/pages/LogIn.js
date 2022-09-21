@@ -62,11 +62,18 @@ const LogIn= () => {
         />
         
       </div>
+     
       <div className='form-group p-4'>
       <Button 
-                            style = {{width: ' 40em',height: '8ch' }}
+                            style = {{width: ' 40em',height: '6ch' }}
                             variant="outlined" href="/" >Logare</Button>
       
+      </div>
+
+      <div align=" center" style={{ margin: "0em 1em" , color: "black"}} >
+           <Typography align=" center" variant="subtitle1" component="div">
+         Ți-ai uitat parola? <Link color="blue" underline="none" href="/" >{'Recuperează'}</Link>
+            </Typography> 
       </div>
 
       <div style={{ margin: "0.8em 18.5em" }} >
@@ -88,9 +95,9 @@ const LogIn= () => {
       
       </div>
 
-      <div align=" center" style={{ margin: "2em 10em" , color: "black"}} >
-           <Typography align=" center" variant="h5" component="div">
-        Nu ai un cont? <a style={{ color: "blue"}} href="/Inregistrare" >{'Inregistrare'}</a>
+      <div align=" center" style={{ margin: "1em 1em" , color: "black"}} >
+           <Typography align=" center" variant="subtitle1" component="div">
+        Nu ai un cont? <Link color= "blue" underline="none" href="/Inregistrare" >{'Înregistrare'}</Link>
             </Typography> 
       </div>
       

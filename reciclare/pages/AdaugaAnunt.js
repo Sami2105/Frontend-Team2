@@ -16,7 +16,8 @@ import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import React, { useReducer } from "react";
 import DropZone from "components/layout/DropZone";
 import styles from "styles/Home.module.css";
-const LogIn = () => {
+
+const AdaugaAnunt = () => {
   const reducer = (state, action) => {
     switch (action.type) {
       case "SET_IN_DROP_ZONE":
@@ -43,11 +44,11 @@ const LogIn = () => {
     >
       <Grid
         container
-        spacing={8}
+        spacing={0}
         justify="center"
-        style={{ margin: "1em 1.5em" }}
+        style={{ margin: "0em 1.5em" }}
       >
-        <Grid item spacing={10} justify="center" style={{ margin: "0 2em" }}>
+        <Grid item spacing={0} justify="center" style={{ margin: "0 2em" }}>
           <Box
             component="form"
             sx={{
@@ -67,9 +68,9 @@ const LogIn = () => {
 
             <Grid
               container
-              spacing={0}
+              spacing={4}
               justify="center"
-              style={{ margin: "1.2em 0" }}
+              style={{ margin: "3em 0" }}
             >
               <div>
                 <TextField
@@ -151,7 +152,7 @@ const LogIn = () => {
                 />
               </div>
 
-              <Grid container style={{ margin: "0 11rem " }}>
+              <Grid container style={{ margin: "0 12rem " }}>
                 <DropZone data={data} dispatch={dispatch} />
               </Grid>
 
@@ -176,4 +177,4 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+export default AdaugaAnunt;

@@ -49,7 +49,7 @@ const Anunturi = () => {
                  </Typography>
                  <Typography align="center" variant="h5" gutterBottom>
                  Aici este locul perfect <br></br> 
-                 unde poți dona produse dar și unde poți primi <br></br>
+                 unde poți DONA produse dar și unde poți PRIMI <br></br>
                  prin donație produsele de care ai nevoie. 
                  </Typography>
 
@@ -109,14 +109,14 @@ const Anunturi = () => {
                       <Grid item spacing={2}  style={{ margin: "3em 5em" }}>
                           <Button 
                             style = {{width: ' 30em',height: '8ch' }}
-                            variant="outlined" href="http://localhost:3000/AdaugaAnunt" >Căutare</Button>
+                            variant="outlined" href="" >Căutare</Button>
                        </Grid>
                 </Grid>
 
                 <Grid item spacing={2}  style={{ margin: "0em 6em" }}>
                   <Typography style={{ margin: "0em 4em" }} variant="subtitle1" gutterBottom>
                   Ai un produs de donat sau vrei să găsești un donator?
-                  <Button style={{ margin: "0em 1em" }} variant="outlined" href="http://localhost:3000/AdaugaAnunt">
+                  <Button style={{ margin: "0em 1em" }} variant="outlined" href="AdaugaAnunt">
                   Adaugă anunț
                   </Button>
                   </Typography>         

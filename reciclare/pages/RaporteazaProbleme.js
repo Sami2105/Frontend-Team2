@@ -1,83 +1,170 @@
 import Layout from "components/layout/Layout";
-
-
+import Image from "next/image";
+import logo from "/images/Logo.png";
 import { Container, Grid, Typography, Avatar } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import MenuItem from "@mui/material/MenuItem";
+import React, { useReducer } from "react";
+import DropZone from "components/layout/DropZone";
+import styles from "styles/Home.module.css";
 
-const useStyles = makeStyles((theme) => ({
-  snsIcon: {
-    width: "30px",
-    height: "30px",
-
-    [theme.breakpoints.down("xs")]: {
-      width: "25px",
-      height: "25px",
-    },
-    "&:hover": {
-      color: theme.palette.info.main,
-    },
+const currencies = [
+  {
+    value: "Foarte urgent",
+    label: "Foarte urgent",
   },
- 
-}));
+  {
+    value: "Urgent",
+    label: "Urgent",
+  },
+  {
+    value: "Mai poate aștepta",
+    label: "Mai poate aștepta",
+  },
+  {
+    value: "Nu e grabă",
+    label: "Nu e grabă",
+  },
+];
 
-const RaporteazaProbleme = () => {
-  const classes = useStyles();
-  // use your picture
- 
+const Raportează = () => {
+  const reducer = (state, action) => {
+    switch (action.type) {
+      case "SET_IN_DROP_ZONE":
+        return { ...state, inDropZone: action.inDropZone };
+      case "ADD_FILE_TO_LIST":
+        return { ...state, fileList: state.fileList.concat(action.files) };
+      default:
+        return state;
+    }
+  };
+
+  const [data, dispatch] = useReducer(reducer, {
+    inDropZone: false,
+    fileList: [],
+  });
+  const [currency, setCurrency] = React.useState("EUR");
+  const handleChange = (event) => {
+    setCurrency(event.target.value);
+  };
+
   return (
     <Layout
       // type your page title and page description.
-      title=" Puncte de reciclare "
-      description="Gaseste cele mai aproapiate puncte de colectare"
+      title="Raportează o problemă"
+      description="Nu fi indiferent la probleme."
     >
-      <Container maxWidth="md">
-        <Grid container direction="column" spacing={8}>
-          <Grid item>
-            <Typography variant="h1" align="center" gutterBottom>
-            RaporteazaProbleme 
-            </Typography>
-            <Typography variant="h2" align="center">
-            Gaseste cele mai aproapiate puncte de colectare
-            </Typography>
-          </Grid>
-          <Grid item container spacing={2} alignItems="center">
+      <Grid
+        container
+        spacing={2}
+        justify="center"
+        style={{ margin: "0em 0em" }}
+      >
+        <Box
+          component="form"
+          sx={{
+            "& .MuiTextField-root": {
+              m: 1,
+              width: "70ch",
+              display: "flex",
+              flexWrap: "wrap",
+            },
+          }}
+          noValidate
+          autoComplete="off"
+        >
+          <Typography variant="h1" align="center" gutterBottom>
+            Raportează o problemă
+          </Typography>
+          <Grid
+            spacing={0}
+            align="center"
+            justify="center"
+            style={{ margin: "5em 0" }}
+          >
             <Grid
-              item
-              container
-              md={4}
-              direction="column"
-              alignItems="center"
-              spacing={2}
+              spacing={0}
+              align="center"
+              justify="center"
+              style={{ margin: "2em 0" }}
             >
-             
-              <Grid item>
-                <Typography variant="h3">John Doe</Typography>
-              </Grid>
-             
+              <div align="center">
+                <TextField
+                  required
+                  id="outlined-required"
+                  label="Ce problemă ați identificat"
+                  defaultValue="Ce problemă ați identificat"
+                  sx={{ m: 1, width: "100ch" }}
+                />
+              </div>
             </Grid>
-            <Grid item container md={8}>
-              <Typography variant="body1">
-                <br />
-                Contrary to popular belief, Lorem Ipsum is not simply random
-                text. It has roots in a piece of classical Latin literature from
-                45 BC, making it over 2000 years old. Richard McClintock, a
-                Latin professor at Hampden-Sydney College in Virginia, looked up
-                one of the more obscure Latin words, consectetur, from a Lorem
-                Ipsum passage, and going through the cites of the word in
-                classical literature, discovered the undoubtable source. Lorem
-                Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus
-                Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero,
-                written in 45 BC. This book is a treatise on the theory of
-                ethics, very popular during the Renaissance. The first line of
-                Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line
-                in section 1.10.32.
-              </Typography>
+
+            <Grid
+              spacing={0}
+              align="center"
+              justify="center"
+              style={{ margin: "2em 0" }}
+            >
+              <div align="center">
+                <TextField
+                  required
+                  id="outlined-required"
+                  label="Adresa unde este problema"
+                  defaultValue="Adresa unde este problema"
+                  sx={{ m: 1, width: "100ch" }}
+                />
+              </div>
+            </Grid>
+
+            <Grid
+              spacing={0}
+              align="center"
+              justify="center"
+              style={{ margin: "2em 0" }}
+            >
+              <div>
+                <TextField
+                  id="outlined-select-currency"
+                  select
+                  label="Gravitatea problemei"
+                  value={currency}
+                  onChange={handleChange}
+                  helperText="Selectează opțiunea potrivită"
+                >
+                  {currencies.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      <div> {option.label} </div>
+                    </MenuItem>
+                  ))}
+                  <br></br>
+                </TextField>
+              </div>
+            </Grid>
+
+            <Grid container style={{ margin: "0 1rem " }}>
+              <DropZone data={data} dispatch={dispatch} />
+            </Grid>
+
+            <Grid
+              container
+              spacing={0}
+              justify="center"
+              style={{ margin: "2em 0" }}
+            >
+              <Button
+                style={{ width: " 69ch", height: "8ch" }}
+                variant="outlined"
+              >
+                Adaugă problema
+              </Button>
             </Grid>
           </Grid>
-        </Grid>
-      </Container>
+        </Box>
+      </Grid>
     </Layout>
   );
 };
 
-export default RaporteazaProbleme;
+export default Raportează;

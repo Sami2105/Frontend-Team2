@@ -1,4 +1,7 @@
 import Layout from "components/layout/Layout";
+import { makeStyles } from "@material-ui/core/styles";
+import CarouselComponent from "components/layout/Carusel";
+import ImgMediaCard from "components/layout/CarduriArticole";
 import {
   Container,
   Grid,
@@ -7,12 +10,6 @@ import {
   Button,
   Item,
 } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import CarouselComponent from "components/layout/Carusel";
-import ImgMediaCard from "components/layout/CarduriArticole";
-import logo from "/images/Logo.png";
-import Link from "components/Link";
-import Image from "next/image";
 
 const useStyles = makeStyles((theme) => ({
   btn: {
@@ -96,7 +93,7 @@ const About = () => {
         container
         spacing={2}
         justify="center"
-        style={{ margin: "1.2em 0" }}
+        style={{ margin: "1.4em 0" }}
       >
         <Grid item xs={2}>
           <ImgMediaCard></ImgMediaCard>

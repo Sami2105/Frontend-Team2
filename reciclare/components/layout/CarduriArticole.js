@@ -1,18 +1,16 @@
-import Image from 'next/image';
-import logo from '/images/Logo.png';
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import Image from "next/image";
+import logo from "/images/Logo.png";
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
 export default function ImgMediaCard() {
   return (
-   
     <Card sx={{ maxWidth: 345 }}>
-       <Image alt="Logo" src={logo} />
+      <Image alt="Logo" src={logo} />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           Lizard
@@ -23,10 +21,13 @@ export default function ImgMediaCard() {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button color="secondary" size="small">
+          Distribuie
+        </Button>
+        <Button color="secondary" size="small">
+          Mai mult...
+        </Button>
       </CardActions>
     </Card>
   );
 }
-
