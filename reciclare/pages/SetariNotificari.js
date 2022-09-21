@@ -1,8 +1,13 @@
 import Layout from "components/layout/Layout";
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
-
-import * as React from 'react';
+import Button from "@mui/material/Button";
+import MenuItem from "@mui/material/MenuItem";
+import FormHelperText from "@mui/material/FormHelperText";
+import FormLabel from "@mui/material/FormLabel";
+import FormControl from "@mui/material/FormControl";
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Switch from "@mui/material/Switch";
+import * as React from "react";
 
 import { Container, Grid, Typography, Avatar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -20,13 +25,25 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.info.main,
     },
   },
- 
 }));
 
 const SetariNotificari = () => {
   const classes = useStyles();
   // use your picture
- 
+
+  const [state, setState] = React.useState({
+    a: false,
+    b: false,
+    c: false,
+  });
+
+  const handleChange = (event) => {
+    setState({
+      ...state,
+      [event.target.name]: event.target.checked,
+    });
+  };
+
   return (
     <Layout
       // type your page title and page description.
@@ -35,28 +52,23 @@ const SetariNotificari = () => {
       <Container maxWidth="lg">
         <Grid container direction="column" spacing={8}>
           <Grid item>
-
             <Typography variant="h1" align="left" gutterBottom>
-            <MenuItem style={{ margin: "0.5em 1.3em" }}>
-              <Avatar /> 
-            </MenuItem>
-            Setări Cont / Notificări
-            <br/>
-            <Typography variant="h2" align="left">
-            <Button href="SetariProfil">Profil
-            </Button>
+              <MenuItem style={{ margin: "0.5em 1.3em" }}>
+                <Avatar />
+              </MenuItem>
+              Setări Cont / Notificări
+              <br />
+              <Typography variant="h2" align="left">
+                <Button href="SetariProfil">Profil</Button>
+              </Typography>
+              <Typography variant="h2" align="left">
+                <Button href="ResetareParola">Parolă</Button>
+              </Typography>
+              <Typography variant="h2" align="left">
+                <Button href="SetariNotificari">Notificări</Button>
+              </Typography>
             </Typography>
-            <Typography variant="h2" align="left">
-            <Button href="ResetareParola">Parolă</Button>
-            </Typography>
-            <Typography variant="h2" align="left">
-            <Button href="SetariNotificari">Notificări</Button>
-            </Typography>
-
-            </Typography>
-            
           </Grid>
-
 
           <Grid item container spacing={2} alignItems="center">
             <Grid
@@ -66,29 +78,62 @@ const SetariNotificari = () => {
               direction="column"
               alignItems="center"
               spacing={2}
-            >
-            </Grid>
+            ></Grid>
             <Grid item container md={8}>
               <Typography variant="body1">
                 <br />
-                Contrary to popular belief, Lorem Ipsum is not simply random
-                text. It has roots in a piece of classical Latin literature from
-                45 BC, making it over 2000 years old. Richard McClintock, a
-                Latin professor at Hampden-Sydney College in Virginia, looked up
-                one of the more obscure Latin words, consectetur, from a Lorem
-                Ipsum passage, and going through the cites of the word in
-                classical literature, discovered the undoubtable source. Lorem
-                Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus
-                Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero,
-                written in 45 BC. This book is a treatise on the theory of
-                ethics, very popular during the Renaissance. The first line of
-                Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line
-                in section 1.10.32.
+                <FormControl component="fieldset" variant="standard">
+                  <FormLabel component="legend" variant="h2">
+                    Notificări
+                  </FormLabel>
+                  <FormGroup>
+                    <FormControlLabel
+                      control={
+                        <Switch
+                          checked={state.a}
+                          onChange={handleChange}
+                          name="a"
+                        />
+                      }
+                      label="Email"
+                    />
+                    <FormHelperText style={{ margin: "1em 4em" }}>
+                      Veți fii anunțat prin email atunci când se postează un
+                      anunț nou!
+                    </FormHelperText>
+                    <FormControlLabel
+                      control={
+                        <Switch
+                          checked={state.b}
+                          onChange={handleChange}
+                          name="b"
+                        />
+                      }
+                      label="Anunțuri donații"
+                    />
+                    <FormHelperText style={{ margin: "1em 4em" }}>
+                      Veți primi noi informații în legătură cu anunțurile despre
+                      donații!
+                    </FormHelperText>
+                    <FormControlLabel
+                      control={
+                        <Switch
+                          checked={state.c}
+                          onChange={handleChange}
+                          name="c"
+                        />
+                      }
+                      label="Anunțuri campanii"
+                    />
+                    <FormHelperText style={{ margin: "1em 4em" }}>
+                      Veți primi noi informații în legătură cu anunțurile despre
+                      campanii!
+                    </FormHelperText>
+                  </FormGroup>
+                </FormControl>
               </Typography>
             </Grid>
           </Grid>
-
-
         </Grid>
       </Container>
     </Layout>
