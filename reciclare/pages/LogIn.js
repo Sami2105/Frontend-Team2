@@ -8,7 +8,7 @@ import { FacebookLoginButton, GoogleLoginButton, InstagramLoginButton } from "re
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-
+import FormDialog from "components/layout/FormDialog";
 const LogIn= () => {
     
     
@@ -72,7 +72,7 @@ const LogIn= () => {
 
       <div align=" center" style={{ margin: "0em 1em" , color: "black"}} >
            <Typography align=" center" variant="subtitle1" component="div">
-         Ți-ai uitat parola? <Link color="blue" underline="none" href="/" >{'Recuperează'}</Link>
+         Ți-ai uitat parola? <FormDialog></FormDialog>
             </Typography> 
       </div>
 
