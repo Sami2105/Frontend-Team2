@@ -38,12 +38,19 @@
 "lodash.debounce": "^4.0.8",
 "next-with-apollo": "^5.1.1",
 "react-transition-group": "^4.4.1",
-"waait": "^1.0.5"
+"waait": "^1.0.5",
+"mapbox-gl": "^2.10.0",
+"react-map-gl": "^7.0.19",
+"react-mapbox-gl": "^5.1.1"
   },
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
+  },
+  "devDependencies": {
+    "@types/node": "18.7.18",
+    "typescript": "4.8.3"
   }
 }
