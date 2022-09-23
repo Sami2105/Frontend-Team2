@@ -12,16 +12,13 @@ export default function CarouselComponent() {
         <div className="carousel-wrapper" >
             <Carousel >
                 <div>
-                    <Image alt="carusel1" src={carusel1} width={1846}
-                        height={500} />
+                    <Image alt="carusel1" src={carusel1}  />
                 </div>
                 <div>
-                    <Image alt="carusel2" src={carusel2} width={1846}
-                        height={500} />
+                    <Image alt="carusel2" src={carusel2} />
                 </div>
                 <div>
-                    <Image alt="carusel3" src={carusel3} width={1846}
-                        height={500} />
+                    <Image alt="carusel3" src={carusel3} />
                 </div>
                 <div>
                     <Image alt="carusel4" src={carusel4} />

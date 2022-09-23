@@ -25,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
     height: "auto",
     boxShadow: "0px 2px 20px rgba(0,0,0,0.4)",
   },
+  Button: {
+    backgroundColor: theme.Button.color,
+  },
 }));
 
 const About = () => {
@@ -44,46 +47,42 @@ const About = () => {
         style={{ margin: "1.2em 0" }}
       >
         <Grid item xs={4}>
-          <h4 className="text-xl mb-1 font-semibold">
-            Ne dorim sa facem planeta un loc mai verde pentru o viata mai
-            sanatoasa. Avem nevoie de oameni dedicati vin-o in echipa noastra.
-            Putem sesiza probleme, invata impreuna despre recilat si pe langa
-            acestea putem schimba obiecte intre noi.
-          </h4>
-          <Button variant="contained" href="/Inregistrare">
-            Sign Up
+          <h1 className="text-xl mb-1 font-semibold">
+            Ne dorim să facem planeta un loc mai verde pentru o viață mai
+            sanatoasă.
+          </h1>
+          <h3 className="text-xl mb-1 font-semibold">
+            Avem nevoie de oameni dedicați! Vin-o în echipa noastră și dăruiește
+            obiecte reciclabile altor persoane sau caută produsele tale de
+            interes, vezi cele mai apropiate puncte de reciclare față de tine și
+            fii cu ochii pe campaniile de reciclare pentru a câștiga premii.
+          </h3>
+          <Button
+            variant="outlined"
+            href="/Inregistrare"
+            className={classes.Button}
+          >
+            Înregistrează-te
           </Button>
         </Grid>
         <Grid item xs={4}>
-          <h4 className="text-xl mb-1 font-semibold">
+          <h3 className="text-xl mb-1 font-semibold">
             Tu reciclezi, firmele te premiaza. Afla despre campaniile de
             reciclare.{" "}
-          </h4>
-          <Button variant="contained" href="/CampaniiReciclare">
+          </h3>
+          <Button variant="outlined" href="/CampaniiReciclare">
             Campanii active
           </Button>
-        </Grid>
-      </Grid>
-
-      <Grid
-        container
-        spacing={8}
-        justify="center"
-        style={{ margin: "1.2em 0" }}
-      >
-        <Grid item xs={4}>
-          <h4 className="text-xl mb-1 font-semibold">
+          <h3 className="text-xl mb-1 font-semibold">
             Afla unde sunt cele mai apropiate puncte de colectare.
-          </h4>
-          <Button variant="contained" href="/PuncteReciclare">
+          </h3>
+          <Button variant="outlined" href="/PuncteReciclare">
             Puncte de colectare
           </Button>
-        </Grid>
-        <Grid item xs={4}>
-          <h4 className="text-xl mb-1 font-semibold">
+          <h3 className="text-xl mb-1 font-semibold">
             Pune un anunt sau colecteaza produsele oferite de alte persoane.
-          </h4>
-          <Button variant="contained" href="/Anunturi">
+          </h3>
+          <Button variant="outlined" href="/Anunturi">
             Forum
           </Button>
         </Grid>
@@ -95,25 +94,14 @@ const About = () => {
         justify="center"
         style={{ margin: "1.4em 0" }}
       >
-        <Grid item xs={2}>
-          <ImgMediaCard></ImgMediaCard>
-        </Grid>
-        <Grid item xs={2}>
-          <ImgMediaCard></ImgMediaCard>
-        </Grid>
-        <Grid item xs={2}>
-          <ImgMediaCard></ImgMediaCard>
-        </Grid>
-        <Grid item xs={2}>
-          <ImgMediaCard></ImgMediaCard>
-        </Grid>
+        <h1>Fii la curent cu cele mai actuale articole de informare</h1>
       </Grid>
 
       <Grid
         container
         spacing={2}
         justify="center"
-        style={{ margin: "1.2em 0" }}
+        style={{ margin: "1.4em 0" }}
       >
         <Grid item xs={2}>
           <ImgMediaCard></ImgMediaCard>

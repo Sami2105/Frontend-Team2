@@ -2,7 +2,8 @@
 // and make the file in the page folder.
 
 export const routes = [
-  { name: "Despre", link: "/" },
+  { name: "Acasă", link: "/" },
+  { name: "Despre", link: "/Despre" },
   { name: "Informează-te!", link: "/Informeaza" },
   { name: "Anunțuri", link: "/Anunturi" },
   { name: "Puncte de reciclare", link: "/PuncteReciclare" },

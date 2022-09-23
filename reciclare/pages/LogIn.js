@@ -66,7 +66,7 @@ const LogIn= () => {
       <div className='form-group p-4'>
       <Button 
                             style = {{width: ' 40em',height: '6ch' }}
-                            variant="outlined" href="/" >Logare</Button>
+                            variant="contained" href="/" >Logare</Button>
       
       </div>
 

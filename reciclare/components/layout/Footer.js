@@ -11,12 +11,12 @@ const useStyles = makeStyles((theme) => ({
     width: `100%`,
     position: "relative",
     overflow: "hidden",
-    marginTop: "6em",
+    marginTop: "2em",
     padding: "2em 0 ",
   },
   link: {
     fontSize: "1.25em",
-    color: "#000000",
+    color: theme.palette.secondary.main,
     "&:hover": {
       color: theme.palette.info.main,
     },
@@ -40,7 +40,7 @@ const Footer = () => {
                   style={{
                     fontWeight: router.pathname === link && "bold",
                     borderBottom:
-                      router.pathname === link && "1px solid #e3e6d5",
+                      router.pathname === link && "1px solid #272828",
                   }}
                 >
                   {name}
@@ -54,7 +54,6 @@ const Footer = () => {
         </Grid>
         <Grid
           item
-          
           style={{
             textDecoration: "none",
           }}

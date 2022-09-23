@@ -118,7 +118,7 @@ const Inregistrare = () => {
             <div className="form-group p-4" style={{ margin: "1.2em 8em" }}>
               <Button
                 style={{ width: " 40em", height: "8ch" }}
-                variant="outlined"
+                variant="contained"
                 href="/"
               >
                 Logare

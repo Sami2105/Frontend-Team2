@@ -110,7 +110,7 @@ const Header = () => {
                 className={classes.link}
                 style={{
                   fontWeight: router.pathname === link && "bold",
-                  borderBottom: router.pathname === link && "1px solid #e3e6d5",
+                  borderBottom: router.pathname === link && "1px solid #272828",
                 }}
               >
                 {name}
