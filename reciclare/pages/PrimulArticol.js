@@ -2,107 +2,102 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import Layout from "components/layout/Layout";
 import Image from "next/image";
-import logo from "/images/Logo.png";
-import { Container, Grid, Typography, Avatar } from "@material-ui/core";
-import {
-  FacebookLoginButton,
-  GoogleLoginButton,
-  InstagramLoginButton,
-} from "react-social-login-buttons";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
+import Articol1 from "/images/Articol1.png";
 import DoneOutlineIcon from "@mui/icons-material/DoneOutline";
-import { DoneAll } from "@material-ui/icons";
+import {Grid} from "@material-ui/core";
 
 const PrimulArticol = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const myfun = (d) => {
-    alert(d.fullname + " form " + d.email);
-  };
+
   return (
     <Layout
       // type your page title and page description.
-      title="Recicleaza corect"
-      description="Inregistreaza-te"
+      title="Articol despre "
     >
+      <h1 align="center" style={{ margin: "0em 0em" }}>
+        Ce este reciclarea?
+      </h1>
+      <h1 align="center" style={{ margin: "0em 0em" }}>
+        Beneficiile reciclării
+      </h1>
       <Grid
         container
         spacing={0}
         justify="center"
-        style={{ margin: "0em 1em" }}
+        style={{ margin: "0em 0em" }}
       >
-        <Grid item style={{ margin: "1em 0em", width: "50%" }}>
-          <h1>
-            Ce este reciclarea – beneficii si tipuri de materiale reciclabile
-          </h1>
+        <Grid item style={{ margin: "1em 0em", width: "55%" }}>
+          <Grid item style={{ margin: "2em 12em", width: "70%" }}>
+            <h3 align="left">
+              În timp ce reciclarea este bună din multe puncte de vedere, scopul
+              final al acesteia este de a-i determina pe oameni să prevină
+              risipa în primul rând.
+            </h3>
+            <h2 style={{ margin: "0.5em 2em", color: "#008037" }}>
+              1. Ce este reciclarea?
+            </h2>
 
-          <h2 style={{ color: "#008037" }}>1. Ce este reciclarea?</h2>
+            <h4 align="left">
+              Reciclarea este procesul de colectare și procesare a materialelor
+              care altfel ar fi aruncate ca gunoi și de transformare în produse
+              noi. Reciclarea poate aduce beneficii comunității, economiei și
+              mediului.
+            </h4>
 
-          <div>
-            Beneficiile reciclarii sunt multiple, de aceea este foarte important
-            ca fiecare dintre noi sa inteleaga faptul ca in spatele legilor
-            drastice privind reciclarea stau idei si principii solide, benefice
-            comunitatilor.
-          </div>
+            <h2 style={{ margin: "0.5em 2em", color: "#008037" }}>
+              2. Beneficiile reciclarii pentru mediu
+            </h2>
 
-          <h2 style={{ color: "#008037" }}>
-            2. Beneficiile reciclarii pentru mediu
-          </h2>
+            <h3 align="left" style={{ margin: "1em 0em" }}>
+              <DoneOutlineIcon style={{ margin: "0em 0em" }}></DoneOutlineIcon>
+              Reduce cantitatea de deșeuri trimise la gropile de gunoi și
+              incineratoare.
+            </h3>
 
-          <div style={{ margin: "1em 0em" }}>
-            prin reciclare se diminueaza considerabil depunearea deseurilor la
-            gropile de gunoi care nu numai ca polueaza masiv mediu dar creeaza
-            si o imagine dezolanta a oraselor, distrugand sanatatea celor care
-            locuiesc in preajma lor
-          </div>
+            <h3 align="left" style={{ margin: "1em 0em" }}>
+              <DoneOutlineIcon style={{ margin: "0em 0em" }}></DoneOutlineIcon>
+              recicland, poluantii eliberati de obicei in apa si aer prin
+              depunerea deseurilor la gropile de gunoi, se diminueaza
+              considerabil
+            </h3>
 
-          <div style={{ margin: "1em 0em" }}>
-            recicland, poluantii eliberati de obicei in apa si aer prin
-            depunerea deseurilor la gropile de gunoi, se diminueaza considerabil
-          </div>
-
-          <div style={{ margin: "1em 0em" }}>
-            prin reciclare se reduc emisiile de gaze cu efect de sera din
-            atmosfera. Acest lucru se realizeaza prin inlocuirea materiei prime
-            virgine folosite, cu materie prima secundara, rezultata in urma
-            reciclarii.
-          </div>
-
-          <h2 style={{ color: "#008037" }}>
-            3. Ce materiale pot fi reciclate?
-          </h2>
-
-          <div>
-            In zilele noastre, cea mai mare parte din produsele diverselor
-            industrii pot fi reciclate: ambalaje, sticla, metal, electrice si
-            electronice, baterii, anvelope si mase plastice, baterii, ulei uzat
-            si nu numai.
-          </div>
+            <h3 align="left" style={{ margin: "1em 0em" }}>
+              <DoneOutlineIcon style={{ margin: "0em 0em" }}></DoneOutlineIcon>
+              Conservă resursele naturale precum lemnul, apa și mineralele.
+            </h3>
+            <h3 align="left" style={{ margin: "1em 0em" }}>
+              <DoneOutlineIcon style={{ margin: "0em 0em" }}></DoneOutlineIcon>
+              Crește securitatea economică prin accesarea unei surse interne de
+              materiale.
+            </h3>
+            <h3 align="left" style={{ margin: "1em 0em" }}>
+              <DoneOutlineIcon style={{ margin: "0em 0em" }}></DoneOutlineIcon>
+              Previne poluarea prin reducerea nevoii de a colecta noi materii
+              prime.
+            </h3>
+            <h3 align="left" style={{ margin: "1em 0em" }}>
+              <DoneOutlineIcon style={{ margin: "0em 0em" }}></DoneOutlineIcon>
+              Economisește energie.
+            </h3>
+            <h3 align="left" style={{ margin: "1em 0em" }}>
+              <DoneOutlineIcon style={{ margin: "0em 0em" }}></DoneOutlineIcon>
+              Sprijină producția românească și conservă resurse valoroase.
+            </h3>
+            <h3 align="left" style={{ margin: "1em 0em" }}>
+              <DoneOutlineIcon style={{ margin: "0em 0em" }}></DoneOutlineIcon>
+              Ajută la crearea de locuri de muncă în industria de reciclare și
+              de fabricație din România.
+            </h3>
+          </Grid>
         </Grid>
 
         <Grid item align="center">
-          <div style={{ margin: "0 1em" }}>
+          <div style={{ margin: "0em 2.5em" }}>
             <Image
-              alt="Logo"
+              alt="Articol1"
               align="center"
-              src={logo}
-              width={100}
-              height={80}
-            />
-          </div>
-
-          <div style={{ margin: "18rem 1em" }}>
-            <Image
-              alt="Logo"
-              align="center"
-              src={logo}
-              width={100}
-              height={80}
+              src={Articol1}
+              width={600}
+              height={600}
             />
           </div>
         </Grid>
