@@ -3,22 +3,24 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import MenuItem from "@mui/material/MenuItem";
-import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
 
 import * as React from "react";
 
-import IconButton from "@mui/material/IconButton";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import InputLabel from "@mui/material/InputLabel";
-import InputAdornment from "@mui/material/InputAdornment";
-import FormControl from "@mui/material/FormControl";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import Alert from "@mui/material/Alert";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import Snackbar from "@mui/material/Snackbar";
 
+import { styled } from "@mui/material/styles";
 import { Container, Grid, Typography, Avatar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { useTheme } from "@mui/material/styles";
 
 const useStyles = makeStyles((theme) => ({
   snsIcon: {
@@ -35,31 +37,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SetariProfil = () => {
+const setariProfil = () => {
   const classes = useStyles();
-
-  const [values, setValues] = React.useState({
-    amount: "",
-    password: "",
-    weight: "",
-    weightRange: "",
-    showPassword: false,
-  });
-
-  const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
-  };
-
-  const handleClickShowPassword = () => {
-    setValues({
-      ...values,
-      showPassword: !values.showPassword,
-    });
-  };
-
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
 
   const StyledPaper = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -68,6 +47,30 @@ const SetariProfil = () => {
     maxWidth: 400,
     color: theme.palette.text.primary,
   }));
+
+  const [open, setOpen] = React.useState(false);
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleClickk = () => {
+    setOpen(true);
+  };
+
+  const handleClosee = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   return (
     <Layout
@@ -109,7 +112,13 @@ const SetariProfil = () => {
                   Avatar
                 </Typography>
                 <br />
-                <MenuItem sx={{ m: 1, width: "5ch" }}>
+                <MenuItem
+                  sx={{ m: 1, width: "5ch" }}
+                  hidden
+                  accept="image/*"
+                  multiple
+                  type="file"
+                >
                   <Avatar />
                 </MenuItem>
                 Schimbați avatarul!
@@ -128,8 +137,8 @@ const SetariProfil = () => {
                     {" "}
                     <TextField
                       required
-                      id="outlined-required"
-                      label="Email"
+                      id="outlined"
+                      label="Adresa"
                       defaultValue=""
                       sx={{ width: "32ch" }}
                     />
@@ -138,76 +147,66 @@ const SetariProfil = () => {
                 <Typography variant="body1">
                   <p>
                     {" "}
-                    <FormControl
-                      sx={{ m: 0.1, width: "32ch" }}
-                      variant="outlined"
-                    >
-                      <InputLabel htmlFor="outlined-adornment-password">
-                        Parola
-                      </InputLabel>
-                      <OutlinedInput
-                        id="outlined-adornment-password"
-                        type={values.showPassword ? "text" : "password"}
-                        value={values.password}
-                        onChange={handleChange("password")}
-                        endAdornment={
-                          <InputAdornment position="end">
-                            <IconButton
-                              aria-label="toggle password visibility"
-                              onClick={handleClickShowPassword}
-                              onMouseDown={handleMouseDownPassword}
-                              edge="end"
-                            >
-                              {values.showPassword ? (
-                                <VisibilityOff />
-                              ) : (
-                                <Visibility />
-                              )}
-                            </IconButton>
-                          </InputAdornment>
-                        }
-                        label="Parola"
-                      />
-                    </FormControl>
+                    <TextField
+                      id="outlined"
+                      label="Nr. tel."
+                      defaultValue=""
+                      sx={{ width: "32ch" }}
+                    />
                   </p>
                 </Typography>
                 <br />
-                <Stack direction="row" spacing={18}>
+                <Stack direction="row" spacing={3} sx={{ width: "100%" }}>
                   <Button variant="contained">Anulează</Button>
-                  <Button variant="contained">Salvează</Button>
+                  <Button variant="contained" onClick={handleClickOpen}>
+                    Șterge cont
+                  </Button>
+                  <Dialog
+                    fullScreen={fullScreen}
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="responsive-dialog-title"
+                  >
+                    <DialogTitle id="responsive-dialog-title">
+                      {"Confirmare ștergere cont!"}
+                    </DialogTitle>
+                    <DialogContent>
+                      <DialogContentText>
+                        Doriți să ștergeți acest cont?
+                      </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                      <Button
+                        autoFocus
+                        onClick={handleClose}
+                        style={{ margin: "0.5em 0.5em" }}
+                      >
+                        Anulează
+                      </Button>
+                      <Button href="/" onClick={handleClose} autoFocus>
+                        Șterge
+                      </Button>
+                    </DialogActions>
+                  </Dialog>
+                  <Button variant="contained" onClick={handleClickk}>
+                    Salvează
+                  </Button>
+                  <Snackbar
+                    open={open}
+                    autoHideDuration={4000}
+                    onClose={handleClosee}
+                  >
+                    <Alert
+                      onClose={handleClosee}
+                      severity="success"
+                      sx={{ width: "100%" }}
+                    >
+                      Modificările au fost salvate cu succes!
+                    </Alert>
+                  </Snackbar>
                 </Stack>
                 <br />
                 <br />
-                <StyledPaper
-                  sx={{
-                    my: 1,
-                    mx: "auto",
-                    p: 2,
-                  }}
-                >
-                  <Grid container wrap="nowrap" spacing={2}>
-                    <Grid item>
-                      <MenuItem style={{ margin: "0.1em 0.2em" }}>
-                        <Avatar />
-                      </MenuItem>
-                    </Grid>
-                    <Grid item xs>
-                      <Typography variant="h2" align="left">
-                        Ștergere cont
-                      </Typography>
-                      <br />
-                      <Typography variant="h7" align="left">
-                        Toate datele dvs. se vor șterge!
-                      </Typography>
-                      <br />
-                      <br />
-                      <br />
-                      <Button variant="outlined" color="error">
-                        Ștergere cont
-                      </Button>
-                    </Grid>
-                  </Grid>
-                </StyledPaper>
               </Typography>
             </Grid>
           </Grid>
@@ -217,4 +216,4 @@ const SetariProfil = () => {
   );
 };
 
-export default SetariProfil;
+export default setariProfil;
