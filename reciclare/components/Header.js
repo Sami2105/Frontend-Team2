@@ -1,10 +1,10 @@
 import Link from "components/Link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import Badge from '@mui/material/Badge';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import AccountCircle from "@mui/icons-material/AccountCircle";
+import Badge from "@mui/material/Badge";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import {
   Grid,
@@ -18,12 +18,15 @@ import {
   IconButton,
 } from "@material-ui/core";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import logo from '/images/Logo.png';
-import Image from 'next/image';
+import logo from "/images/Logo.png";
+import Image from "next/image";
 import MenuIcon from "@material-ui/icons/Menu";
-import AccountMenu from "./AccountMenu";
+import AccountMenu from "./layout/AccountMenu";
 
 import { routes } from "data/routes";
+import { useUser } from "./User";
+import SignOut from "./SignOut";
+import useClassStyles from "./styles/ClassStyles";
 
 function ElevationScroll(props) {
   const { children } = props;
@@ -38,53 +41,9 @@ function ElevationScroll(props) {
   });
 }
 
-const useStyles = makeStyles((theme) => ({
-  toolbarMargin: {
-    ...theme.mixins.toolbar,
-    marginBottom: `5em`,
-    [theme.breakpoints.down("md")]: {
-      marginBottom: "4em",
-    },
-    [theme.breakpoints.down("xs")]: {
-      marginBottom: "2em",
-    },
-  },
-  logo: {
-    color: theme.palette.secondary.main,
-    width: "max-content",
-    fontSize: "1.5rem",
-  },
-  drawerIconContainer: {
-    marginLeft: "auto",
-    padding: 0,
-    "&:hover": {
-      backgroundColor: "transparent",
-    },
-  },
-  drawerIcon: {
-    height: `50px`,
-    width: `50px`,
-    color: `#fff`,
-    [theme.breakpoints.down("xs")]: {
-      height: `40px`,
-      width: `40px`,
-    },
-  },
-  drawer: {
-    backgroundColor: theme.palette.secondary.main,
-    padding: "0 6em",
-  },
-  link: {
-    fontSize: "1.25em",
-    color: theme.palette.secondary.main,
-    "&:hover": {
-      color: theme.palette.info.main,
-    },
-  },
-}));
-
 const Header = () => {
-  const classes = useStyles();
+  const user = useUser();
+  const classes = useClassStyles();
   const theme = useTheme();
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
@@ -97,41 +56,60 @@ const Header = () => {
 
   const tabs = (
     <>
-     <Grid container justify="flex-end" spacing={4}>
-      <Link href="/">
-            <Image alt="logo"  href="/"  src={logo} width={56} height={56}/>       
+      <Grid container justify="center" spacing={2}>
+        <Link href="/">
+          <Image alt="logo" href="/" src={logo} width={56} height={56} />
+        </Link>
 
-            </Link>
-        {path.map(({ name, link }) => (
-          
-          <Grid item key={link}>
-            <Link href={link}>
-              <Typography
-                className={classes.link}
-                style={{
-                  fontWeight: router.pathname === link && "bold",
-                  borderBottom: router.pathname === link && "1px solid #272828",
-                }}
-              >
-                {name}
-              </Typography>
-            </Link>
-          </Grid> 
-        ))}
-    
-                <IconButton
-                
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                
-                color="inherit"
-              >
-                <Badge badgeContent={17} color="error">
-                <NotificationsIcon /></Badge>
-              </IconButton>
-              
-              <AccountMenu />
+        {user &&
+          path.LOGGED_IN.map(({ name, link }) => (
+            <Grid item key={link}>
+              <Link href={link}>
+                <Typography
+                  className={classes.link}
+                  style={{
+                    fontWeight: router.pathname === link && "bold",
+                    borderBottom:
+                      router.pathname === link && "1px solid #272828",
+                  }}
+                >
+                  {name}
+                </Typography>
+              </Link>
+            </Grid>
+          ))}
+        {user && <SignOut />}
+
+        {!user &&
+          path.LOGGED_OUT.map(({ name, link }) => (
+            <Grid item key={link}>
+              <Link href={link}>
+                <Typography
+                  className={classes.link}
+                  style={{
+                    fontWeight: router.pathname === link && "bold",
+                    borderBottom:
+                      router.pathname === link && "1px solid #272828",
+                  }}
+                >
+                  {name}
+                </Typography>
+              </Link>
+            </Grid>
+          ))}
+
+        <IconButton
+          aria-label="account of current user"
+          aria-controls="menu-appbar"
+          aria-haspopup="true"
+          color="inherit"
+        >
+          <Badge badgeContent={17} color="error">
+            <NotificationsIcon />
+          </Badge>
+        </IconButton>
+
+        <AccountMenu />
       </Grid>
     </>
   );
@@ -148,7 +126,7 @@ const Header = () => {
       >
         <div className={classes.toolbarMargin} />
         <List disablePadding>
-          {path.map(({ name, link }) => (
+          {path.LOGGED_OUT.map(({ name, link }) => (
             <ListItem
               key={link}
               divider

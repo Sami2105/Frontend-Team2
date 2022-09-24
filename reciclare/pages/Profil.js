@@ -12,6 +12,7 @@ import PropTypes from "prop-types";
 import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
+
 import { Container, Grid, Typography, Avatar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -61,16 +62,15 @@ function a11yProps(index) {
     "aria-controls": `simple-tabpanel-${index}`,
   };
 }
+
 const Profil = () => {
   const classes = useStyles();
   // use your picture
-
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
   return (
     <Layout
       // type your page title and page description.
@@ -86,7 +86,7 @@ const Profil = () => {
           <Typography
             variant="h4"
             align="left"
-            style={{ margin: "0em 0em" }}
+            style={{ margin: "1em 0em" }}
             gutterBottom
           >
             <MenuItem style={{ margin: "0em 0.7em" }}>
@@ -122,7 +122,7 @@ const Profil = () => {
             <SettingsIcon></SettingsIcon>
             <a
               style={{ color: "blue", margin: "0em 1em" }}
-              href="/SetariProfil"
+              href="/setariProfil"
             >
               {"Setări profil"}
             </a>

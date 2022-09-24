@@ -84,13 +84,13 @@ const SetariProfil = () => {
               Setări Cont / Profil
               <br />
               <Typography variant="h2" align="left">
-                <Button href="SetariProfil">Profil</Button>
+                <Button href="/setariProfil">Profil</Button>
               </Typography>
               <Typography variant="h2" align="left">
-                <Button href="ResetareParola">Parolă</Button>
+                <Button href="/resetareParola">Parolă</Button>
               </Typography>
               <Typography variant="h2" align="left">
-                <Button href="SetariNotificari">Notificări</Button>
+                <Button href="/setariNotificari">Notificări</Button>
               </Typography>
             </Typography>
           </Grid>
@@ -109,7 +109,7 @@ const SetariProfil = () => {
                   Avatar
                 </Typography>
                 <br />
-                <MenuItem sx={{ m: 1, width: '5ch' }}>
+                <MenuItem sx={{ m: 1, width: "5ch" }}>
                   <Avatar />
                 </MenuItem>
                 Schimbați avatarul!
@@ -120,7 +120,7 @@ const SetariProfil = () => {
                     id="outlined-required"
                     label="Nume complet"
                     defaultValue=""
-                    sx={{ width: '32ch' }}
+                    sx={{ width: "32ch" }}
                   />
                 </p>
                 <Typography variant="body1">
@@ -131,7 +131,7 @@ const SetariProfil = () => {
                       id="outlined-required"
                       label="Email"
                       defaultValue=""
-                      sx={{ width: '32ch' }}
+                      sx={{ width: "32ch" }}
                     />
                   </p>
                 </Typography>

@@ -48,10 +48,10 @@
     "react-mapbox-gl": "^5.1.1"
   },
   "scripts": {
-    "dev": "next",
+    "dev": "next -p 7777",
     "build": "next build",
-    "start": "next start",
-    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
+    "start": "next start -p 7777",
+    "test": "NODE_ENV=test jest --watch"
   },
   "devDependencies": {
     "@types/node": "18.7.18",

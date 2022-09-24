@@ -59,13 +59,13 @@ const SetariNotificari = () => {
               Setări Cont / Notificări
               <br />
               <Typography variant="h2" align="left">
-                <Button href="SetariProfil">Profil</Button>
+                <Button href="/setariProfil">Profil</Button>
               </Typography>
               <Typography variant="h2" align="left">
-                <Button href="ResetareParola">Parolă</Button>
+                <Button href="/resetareParola">Parolă</Button>
               </Typography>
               <Typography variant="h2" align="left">
-                <Button href="SetariNotificari">Notificări</Button>
+                <Button href="/setariNotificari">Notificări</Button>
               </Typography>
             </Typography>
           </Grid>

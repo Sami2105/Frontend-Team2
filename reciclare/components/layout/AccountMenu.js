@@ -76,7 +76,7 @@ export default function AccountMenu() {
       >
         <MenuItem style={{ margin: "0.5em 1.3em" }}>
           <Avatar />
-          <Link color="black" href="/Profil" underline="none">
+          <Link color="black" href="/profil" underline="none">
             {"Profil"}
           </Link>
         </MenuItem>
@@ -85,7 +85,7 @@ export default function AccountMenu() {
           <ListItemIcon>
             <Settings fontSize="small" />
           </ListItemIcon>
-          <Link color="black" href="/SetariProfil" underline="none">
+          <Link color="black" href="/setariProfil" underline="none">
             {"Setări"}
           </Link>
         </MenuItem>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import DeleteProduct from "./DeleteProduct";
-import ItemStyles from "../components/style/ItemStyles";
+import ItemStyles from "./styles/ItemStyles";
 
 export default function Product({ product }) {
   return (

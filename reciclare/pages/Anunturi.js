@@ -138,7 +138,7 @@ const Anunturi = () => {
             <Button
               style={{ margin: "0em 1em" }}
               variant="outlined"
-              href="AdaugaAnunt"
+              href="/adaugaAnunt"
             >
               Adaugă anunț
             </Button>

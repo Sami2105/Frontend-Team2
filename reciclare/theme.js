@@ -39,8 +39,8 @@ const theme = createMuiTheme({
     },
   },
   Button: {
-    color: '#388167',
-  }
+    color: "#388167",
+  },
 });
 
 export default theme;

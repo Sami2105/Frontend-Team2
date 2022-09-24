@@ -4,7 +4,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Container, Grid, Typography } from "@material-ui/core";
 import { routes } from "data/routes";
 
-
 const useStyles = makeStyles((theme) => ({
   footer: {
     backgroundColor: theme.palette.primary.main,
@@ -21,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.info.main,
     },
   },
-  
 }));
 
 const Footer = () => {
@@ -31,8 +29,8 @@ const Footer = () => {
   return (
     <footer className={classes.footer}>
       <Container maxWidth="lg">
-        <Grid container spacing={3} >
-          {path.map(({ name, link }) => (
+        <Grid container spacing={3}>
+          {path.LOGGED_OUT.map(({ name, link }) => (
             <Grid item key={link}>
               <Link href={link}>
                 <Typography
@@ -49,19 +47,13 @@ const Footer = () => {
             </Grid>
           ))}
         </Grid>
-        <Grid container direction="column" style={{ margin: "1.2em 0" }}>
-          
-        </Grid>
+        <Grid container direction="column" style={{ margin: "1.2em 0" }}></Grid>
         <Grid
           item
           style={{
             textDecoration: "none",
           }}
-        >
-          <Typography >
-            &copy;Go Green
-          </Typography>
-        </Grid>
+        ></Grid>
       </Container>
     </footer>
   );

@@ -59,7 +59,7 @@ const About = () => {
           </h3>
           <Button
             variant="outlined"
-            href="/Inregistrare"
+            href="/inregistrare"
             className={classes.Button}
           >
             Înregistrează-te
@@ -70,19 +70,19 @@ const About = () => {
             Tu reciclezi, firmele te premiaza. Afla despre campaniile de
             reciclare.{" "}
           </h3>
-          <Button variant="outlined" href="/CampaniiReciclare">
+          <Button variant="outlined" href="/campaniiReciclare">
             Campanii active
           </Button>
           <h3 className="text-xl mb-1 font-semibold">
             Afla unde sunt cele mai apropiate puncte de colectare.
           </h3>
-          <Button variant="outlined" href="/PuncteReciclare">
+          <Button variant="outlined" href="/puncteReciclare">
             Puncte de colectare
           </Button>
           <h3 className="text-xl mb-1 font-semibold">
             Pune un anunt sau colecteaza produsele oferite de alte persoane.
           </h3>
-          <Button variant="outlined" href="/Anunturi">
+          <Button variant="outlined" href="/anunturi">
             Forum
           </Button>
         </Grid>
