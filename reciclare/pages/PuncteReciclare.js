@@ -47,6 +47,10 @@ const PuncteReciclare = () => {
         {" "}
         <Grid item>
           <section>
+            <a href="/myfile.html">
+              Afla mai multe informatii despre punctele de reciclare
+            </a>
+
             <Map />
           </section>
         </Grid>
