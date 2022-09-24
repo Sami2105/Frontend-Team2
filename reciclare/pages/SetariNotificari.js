@@ -7,6 +7,9 @@ import FormControl from "@mui/material/FormControl";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
+import Snackbar from "@mui/material/Snackbar";
+import Stack from "@mui/material/Stack";
+import Alert from "@mui/material/Alert";
 import * as React from "react";
 
 import { Container, Grid, Typography, Avatar } from "@material-ui/core";
@@ -27,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SetariNotificari = () => {
+const setariNotificari = () => {
   const classes = useStyles();
   // use your picture
 
@@ -42,6 +45,20 @@ const SetariNotificari = () => {
       ...state,
       [event.target.name]: event.target.checked,
     });
+  };
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
   };
 
   return (
@@ -131,6 +148,27 @@ const SetariNotificari = () => {
                     </FormHelperText>
                   </FormGroup>
                 </FormControl>
+                <br />
+                <br />
+                <Stack direction="row" spacing={30} sx={{ width: "100%" }}>
+                  <Button variant="contained">Anulează</Button>
+                  <Button variant="contained" onClick={handleClick}>
+                    Salvează
+                  </Button>
+                  <Snackbar
+                    open={open}
+                    autoHideDuration={4000}
+                    onClose={handleClose}
+                  >
+                    <Alert
+                      onClose={handleClose}
+                      severity="success"
+                      sx={{ width: "100%" }}
+                    >
+                      Notificările au fost salvate cu succes!
+                    </Alert>
+                  </Snackbar>
+                </Stack>
               </Typography>
             </Grid>
           </Grid>
@@ -140,4 +178,4 @@ const SetariNotificari = () => {
   );
 };
 
-export default SetariNotificari;
+export default setariNotificari;
