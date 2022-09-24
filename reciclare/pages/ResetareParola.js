@@ -4,6 +4,8 @@ import Stack from "@mui/material/Stack";
 import MenuItem from "@mui/material/MenuItem";
 
 import * as React from "react";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
 import IconButton from "@mui/material/IconButton";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
@@ -30,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ResetareParola = () => {
+const resetareParola = () => {
   const classes = useStyles();
 
   const [values, setValues] = React.useState({
@@ -56,6 +58,20 @@ const ResetareParola = () => {
     event.preventDefault();
   };
 
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+
   // use your picture
 
   return (
@@ -64,7 +80,7 @@ const ResetareParola = () => {
       title=" Resetare parolă "
     >
       <Container maxWidth="lg">
-        <Grid container direction="column">
+      <Grid container direction="column">
           <Grid item>
             <Typography variant="h1" align="left" gutterBottom>
               <MenuItem style={{ margin: "0.5em 1.3em" }}>
@@ -96,7 +112,7 @@ const ResetareParola = () => {
                 <br />
                 Adăugați parola curentă pentru a schimba parola!
                 <p>
-                  {" "}
+                {" "}
                   <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
                     <InputLabel htmlFor="outlined-adornment-password">
                       Parola curentă!
@@ -130,7 +146,7 @@ const ResetareParola = () => {
                   <br />
                   Adăugați noua parolă!
                   <p>
-                    {" "}
+                  {" "}
                     <FormControl
                       sx={{ m: 1, width: "25ch" }}
                       variant="outlined"
@@ -168,7 +184,7 @@ const ResetareParola = () => {
                   <br />
                   Confirmați noua parolă!
                   <p>
-                    {" "}
+                  {" "}
                     <FormControl
                       sx={{ m: 1, width: "25ch" }}
                       variant="outlined"
@@ -203,9 +219,24 @@ const ResetareParola = () => {
                   </p>
                 </Typography>
                 <br />
-                <Stack direction="row" spacing={12}>
+                <Stack direction="row" spacing={12} sx={{ width: "100%" }}>
                   <Button variant="contained">Anulează</Button>
-                  <Button variant="contained">Salvează</Button>
+                  <Button variant="contained" onClick={handleClick}>
+                    Salvează
+                  </Button>
+                  <Snackbar
+                    open={open}
+                    autoHideDuration={4000}
+                    onClose={handleClose}
+                  >
+                    <Alert
+                      onClose={handleClose}
+                      severity="success"
+                      sx={{ width: "100%" }}
+                    >
+                      Parola a fost modificată cu succes!
+                    </Alert>
+                  </Snackbar>
                 </Stack>
               </Typography>
             </Grid>
@@ -216,4 +247,4 @@ const ResetareParola = () => {
   );
 };
 
-export default ResetareParola;
+export default resetareParola;
