@@ -30,11 +30,16 @@ const CampaniiReciclare = () => {
       title="Campanii de reciclare"
       description="Aici găsești campanii cu si despre reciclare. Implică-te!"
     >
-      <Typography variant="h1" align="center" gutterBottom>
+      <Typography variant="h1" align="center" style={{margin: '1.5em 0 1.5em 0'}} gutterBottom>
         Campanii de reciclare
       </Typography>
-      <Grid container spacing={8} justify="center">
-        <Grid item xs={4}>
+      <Grid
+        container
+        spacing={2}
+        justify="center"
+
+      >
+        <Grid item xs={6}>
           <Image
             alt="Campania2"
             align="center"
@@ -44,7 +49,7 @@ const CampaniiReciclare = () => {
           />
         </Grid>
 
-        <Grid item xs={4}>
+        <Grid item xs={6}>
           <Grid align="left">
             <h1 style={{ color: "#388167" }}>
               Luptă pentru un viitor durabil!
@@ -65,18 +70,18 @@ const CampaniiReciclare = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid container spacing={8} justify="center">
-        <Grid item xs={4}>
+      <Grid container spacing={2} style={{margin:'1em 0'}} justify="center">
+        <Grid item xs={6}>
           <Image
             alt="Campania1"
             align="center"
             src={Campania1}
-            width={950}
-            height={788}
+            width={900}
+            height={740}
           />
         </Grid>
 
-        <Grid item xs={4}>
+        <Grid item xs={6}>
           <Grid align="left">
             <h1 style={{ color: "#388167" }}>
               Orice bec ars merită să ajungă într-un Colț Verde!
@@ -98,8 +103,13 @@ const CampaniiReciclare = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid container spacing={8} justify="center">
-        <Grid item xs={4}>
+      <Grid
+        container
+        spacing={2}
+        justify="center"
+   
+      >
+        <Grid item xs={6}>
           <Image
             alt="Campania3"
             align="center"
@@ -109,7 +119,7 @@ const CampaniiReciclare = () => {
           />
         </Grid>
 
-        <Grid item xs={4}>
+        <Grid item xs={6}>
           <Grid align="left">
             <h1 style={{ color: "#388167" }}>Energie pentru echilibru</h1>
 
