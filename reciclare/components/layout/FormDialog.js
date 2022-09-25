@@ -21,7 +21,7 @@ export default function FormDialog() {
   return (
     <div>
       <Button variant="outlined" onClick={handleClickOpen}>
-       Recupereaza parola
+       Recuperează parola
       </Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Ti-ai uitat parola?</DialogTitle>

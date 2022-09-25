@@ -1,6 +1,5 @@
 import Layout from "components/layout/Layout";
 import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
 import FormHelperText from "@mui/material/FormHelperText";
 import FormLabel from "@mui/material/FormLabel";
 import FormControl from "@mui/material/FormControl";
@@ -74,13 +73,13 @@ const setariNotificari = () => {
 
         <Grid item>
           <FormControl component="fieldset" variant="standard">
-            <FormLabel component="legend" variant="h2">
+            <FormLabel style={{color:'#388167'}} component="legend" variant="h2">
               Notificări
             </FormLabel>
             <FormGroup>
               <FormControlLabel
                 control={
-                  <Switch checked={state.a} onChange={handleChange} name="a" />
+                  <Switch style={{color:'#388167'}} checked={state.a} onChange={handleChange} name="a" />
                 }
                 label="Email"
               />
@@ -90,7 +89,7 @@ const setariNotificari = () => {
               </FormHelperText>
               <FormControlLabel
                 control={
-                  <Switch checked={state.b} onChange={handleChange} name="b" />
+                  <Switch style={{color:'#388167'}} checked={state.b} onChange={handleChange} name="b" />
                 }
                 label="Anunțuri donații"
               />
@@ -100,7 +99,7 @@ const setariNotificari = () => {
               </FormHelperText>
               <FormControlLabel
                 control={
-                  <Switch checked={state.c} onChange={handleChange} name="c" />
+                  <Switch style={{color:'#388167'}} checked={state.c} onChange={handleChange} name="c" />
                 }
                 label="Anunțuri campanii"
               />

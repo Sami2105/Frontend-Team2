@@ -23,60 +23,52 @@ export const routes = {
   ],
   ARTICLES: [
     {
-      photo: "/Logo.png",
       name: "Ce este reciclarea?",
-      link: "/primulArticol",
+      link: "/articolul1",
       descriere:
         "În timp ce reciclarea este bună din multe puncte de vedere, scopul final al acesteia este de a-i determina pe oameni să prevină risipa în primul rând.",
     },
     {
-      photo: "/Articol1.png",
-      name: "Ce este reciclarea?",
+      name: "Pașii reciclării",
       link: "/articolul2",
       descriere:
-        "În timp ce reciclarea este bună din multe puncte de vedere, scopul final al acesteia este de a-i determina pe oameni să prevină risipa în primul rând.",
+        "Există atât de multe materiale care pot fi reciclate în societatea actuală; ar fi nevoie de o carte pentru a intra în detaliu despre fiecare. Mai jos, totuși, sunt enumerate câteva...",
     },
     {
-      photo: "/Articol1.png",
-      name: "Ce este reciclarea?",
+      name: "Materiale reciclabile",
       link: "/articolul3",
       descriere:
-        "În timp ce reciclarea este bună din multe puncte de vedere, scopul final al acesteia este de a-i determina pe oameni să prevină risipa în primul rând.",
+        "Există atât de multe materiale care pot fi reciclate în societatea actuală; ar fi nevoie de o carte pentru a intra în detaliu desprefiecare. Mai jos, totuși, sunt enumerate câteva...",
     },
     {
-      photo: "/Articol1.png",
-      name: "Ce este reciclarea?",
+      name: "De ce să reciclăm?",
       link: "/articolul4",
       descriere:
-        "În timp ce reciclarea este bună din multe puncte de vedere, scopul final al acesteia este de a-i determina pe oameni să prevină risipa în primul rând.",
+        "Reciclarea reduce consumul de energie și volumul de emisii. Reciclând o conservă de aluminiu puteți economisi 90 % din energia necesară pentru a produce...",
     },
     {
-      photo: "/logo.png",
-      name: "Ce este reciclarea?",
+      name: "Ziua reciclării",
       link: "/articolul5",
       descriere:
-        "În timp ce reciclarea este bună din multe puncte de vedere, scopul final al acesteia este de a-i determina pe oameni să prevină risipa în primul rând.",
+        "Sărbătorită pe 18 martie în fiecare an, este o inițiativă de reciclare care ne încurajează să privim gunoiul într-o nouă lumină. Există mai multe modalități de reciclare...",
     },
     {
-      photo: "/Articol1.png",
-      name: "Ce este reciclarea?",
+      name: "Informații importante",
       link: "/articolul6",
       descriere:
-        "În timp ce reciclarea este bună din multe puncte de vedere, scopul final al acesteia este de a-i determina pe oameni să prevină risipa în primul rând.",
+        "Peste 50% din cutiile de aluminiu produse sunt reciclate. Fiecare gospodărie din Marea Britanie folosește aproximativ 600 de cutii de oțel pe an.",
     },
     {
-      photo: "/Articol1.png",
-      name: "Ce este reciclarea?",
+      name: "Beneficiile mediului",
       link: "/articolul7",
       descriere:
-        "În timp ce reciclarea este bună din multe puncte de vedere, scopul final al acesteia este de a-i determina pe oameni să prevină risipa în primul rând.",
+        "Prin reciclare, oamenii pot împiedica milioane de tone de materiale să intre în gropile de gunoi, economisind spațiu pentru gunoiul care nu poate fi...",
     },
     {
-      photo: "/Articol1.png",
-      name: "Ce este reciclarea?",
+      name: "Beneficii economice",
       link: "/articolul8",
       descriere:
-        "În timp ce reciclarea este bună din multe puncte de vedere, scopul final al acesteia este de a-i determina pe oameni să prevină risipa în primul rând.",
+        "  Reciclarea contribuie la o economie circulară în care totul este mai degrabă o resursă decât un deșeu. Programele de reciclare desfășurate în mod corespunzător...",
     },
   ],
 };

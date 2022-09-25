@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Head from "next/head";
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -10,6 +9,8 @@ import Router from "next/router";
 // import Page from '../components/Page';
 // import '../components/styles/nprogress.css';
 import withData from "../lib/withData";
+import 'styles/globals.css'
+import 'styles/Home.module.css'
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());

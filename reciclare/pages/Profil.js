@@ -1,9 +1,6 @@
 import Layout from "components/layout/Layout";
-import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import Pagination from "@mui/material/Pagination";
 import Cards from "components/layout/Card";
-import Stack from "@mui/material/Stack";
 import MailIcon from "@mui/icons-material/Mail";
 import CallIcon from "@mui/icons-material/Call";
 import SettingsIcon from "@mui/icons-material/Settings";
@@ -13,23 +10,9 @@ import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 
-import { Container, Grid, Typography, Avatar } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Grid, Typography, Avatar } from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => ({
-  snsIcon: {
-    width: "25px",
-    height: "25px",
 
-    [theme.breakpoints.down("xs")]: {
-      width: "1px",
-      height: "1px",
-    },
-    "&:hover": {
-      color: theme.palette.info.main,
-    },
-  },
-}));
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -64,20 +47,15 @@ function a11yProps(index) {
 }
 
 const Profil = () => {
-  const classes = useStyles();
-  // use your picture
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
   return (
-    <Layout
-      // type your page title and page description.
-      title="Profil"
-    >
-      <Grid container spacing={8} justify="center">
-        <Grid item xs={4}>
+    <Layout title="Profil">
+      <Grid container spacing={1} justify="center" style={{margin: '5em 0 1.2em 0'}}>
+        <Grid item xs={6}>
           <Typography variant="h4" align="left" gutterBottom>
             <MenuItem>
               <Avatar style={{ width: 125, height: 125 }}></Avatar>
@@ -97,34 +75,42 @@ const Profil = () => {
 
           <Typography variant="subtitle2" component="div">
             <SettingsIcon></SettingsIcon>
-            <a style={{ color: "blue" }} href="/setariProfil">
+            <a style={{ color: "#388167" }} href="/setariProfil">
               {"Setări profil"}
             </a>
           </Typography>
         </Grid>
 
-        <Grid item xs={4}>
-          <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+        <Grid item xs={6}>
+          <Box sx={{ borderBottom: 1, borderColor: "#388167" }}>
             <Tabs
               value={value}
               onChange={handleChange}
               aria-label="basic tabs example"
+              
             >
-              <Tab label="Donații" {...a11yProps(0)} />
-              <Tab label="Probleme" {...a11yProps(1)} />
+              <Tab style={{color:'#388167'}} label="Donații" {...a11yProps(0)} />
+              <Tab style={{color:'#388167'}} label="Probleme" {...a11yProps(1)} />
             </Tabs>
           </Box>
           <TabPanel value={value} index={0}>
-            <div>
-              <Cards></Cards>
-            </div>
-            <div>
-              <Cards></Cards>
-            </div>
+            <Grid container spacing={2}>
+              <Grid item>
+                <Cards></Cards>
+              </Grid>
+              <Grid item>
+                <Cards></Cards>
+              </Grid>
+            </Grid>
           </TabPanel>
           <TabPanel value={value} index={1}>
-            <Grid>
-              <Cards></Cards>
+            <Grid container spacing={2}>
+              <Grid item>
+                <Cards></Cards>
+              </Grid>
+              <Grid item>
+                <Cards></Cards>
+              </Grid>
             </Grid>
           </TabPanel>
         </Grid>

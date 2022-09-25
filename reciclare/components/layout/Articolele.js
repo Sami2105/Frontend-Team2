@@ -2,7 +2,7 @@ import Link from "next/link";
 import Grid from "@mui/material/Grid";
 import { useRouter } from "next/router";
 import { routes } from "data/routes";
-import { Container, Typography, Avatar } from "@material-ui/core";
+import { Typography} from "@material-ui/core";
 import logo from "/images/Logo.png";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -13,9 +13,9 @@ const Cardd = () => {
   const router = useRouter();
   const path = routes;
   return (
-    <Grid container justify="center" spacing={2}>
-      {path.ARTICLES.map(({ photo, name, link, descriere }) => (
-        <Card sx={{ maxWidth: 300, m: 1 }}>
+    <Grid container justify="center" spacing={4}>
+      {path.ARTICLES.map(({ name, link, descriere }) => (
+        <Card sx={{ maxWidth: 268, m: 3 }} >
           <Image alt="Logo" src={logo} />
           <CardContent>
             <Grid item key={link}>
@@ -38,7 +38,7 @@ const Cardd = () => {
             </Grid>
           </CardContent>
           <CardActions>
-            <Button color="secondary" size="small" href={link}>
+            <Button style={{backgroundColor:'#388167',  color: "#FFFFFF", padding:'0.5em' }} size="small" href={link}>
               Mai mult...
             </Button>
           </CardActions>

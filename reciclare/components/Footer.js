@@ -7,11 +7,6 @@ import { routes } from "data/routes";
 const useStyles = makeStyles((theme) => ({
   footer: {
     backgroundColor: theme.palette.primary.main,
-    width: `100%`,
-    position: "relative",
-    overflow: "hidden",
-    marginTop: "2em",
-    padding: "2em 0 ",
   },
   link: {
     fontSize: "1.25em",
@@ -19,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       color: theme.palette.info.main,
     },
+    margin: '2.5em 0em 0em 0em',
   },
 }));
 
@@ -28,8 +24,8 @@ const Footer = () => {
   const router = useRouter();
   return (
     <footer className={classes.footer}>
-      <Container maxWidth="lg">
-        <Grid container spacing={3} justify="center">
+      <Container >
+        <Grid container spacing={4} >
           {path.LOGGED_OUT.map(({ name, link }) => (
             <Grid item key={link}>
               <Link href={link}>

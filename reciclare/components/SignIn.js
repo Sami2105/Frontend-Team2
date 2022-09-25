@@ -1,24 +1,16 @@
 import gql from "graphql-tag";
 import { useMutation } from "@apollo/client";
-import Form from "./styles/Form";
 import useForm from "../lib/useForm";
 import { CURRENT_USER_QUERY } from "./User";
-import Error from "./ErrorMessage";
 import { useRouter } from "next/router";
-import Layout from "./layout/Layout";
 import Image from "next/image";
 import logo from "/images/Logo.png";
 import * as React from "react";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -76,10 +68,9 @@ export default function SignIn() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container>
+      <Container >
         <Box
           sx={{
-            marginTop: 2,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -108,7 +99,7 @@ export default function SignIn() {
               required
               fullWidth
               id="email"
-              label="Email Address"
+              label="Adresa de mail"
               name="email"
               autoComplete="email"
               autoFocus
@@ -120,7 +111,7 @@ export default function SignIn() {
               required
               fullWidth
               name="password"
-              label="Password"
+              label="Parola"
               type="password"
               id="password"
               autoComplete="current-password"
@@ -142,7 +133,7 @@ export default function SignIn() {
               }}
               className="button"
             >
-              Sign In
+              Logare
             </Button>
             <div align=" center" style={{ color: "black" }}>
               <Typography align=" center" variant="subtitle1" component="div">
@@ -156,13 +147,13 @@ export default function SignIn() {
               </Typography>{" "}
             </div>
 
-            <div>
+            <div style={{margin:'0.5em 2em 0.5em 0.5em', width:'101%'}} >
               <GoogleLoginButton onClick={() => alert("Hello")} />
             </div>
-            <div>
+            <div style={{margin:'0.5em 2em 0.5em 0.5em', width:'101%'}}>
               <FacebookLoginButton onClick={() => alert("Hello")} />
             </div>
-            <div>
+            <div style={{margin:'0.5em 2em 0.5em 0.5em', width:'101%'}}>
               <InstagramLoginButton onClick={() => alert("Hello")} />
             </div>
 

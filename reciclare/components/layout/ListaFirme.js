@@ -1,8 +1,7 @@
-import { Container, Grid, Typography, Avatar, Box } from "@material-ui/core";
+import {Grid} from "@material-ui/core";
 import * as React from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
 import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
 export default function Lista() {

@@ -12,8 +12,8 @@ const About = () => {
     >
       <CarouselComponent></CarouselComponent>
 
-      <Grid container spacing={8} justify="center">
-        <Grid item xs={4}>
+      <Grid container spacing={2} justify="center">
+        <Grid item xs={6}>
           <h1 className="text-xl mb-1 font-semibold">
             Ne dorim să facem planeta un loc mai verde pentru o viață mai
             sanatoasă.
@@ -37,9 +37,9 @@ const About = () => {
             Înregistrează-te
           </Button>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={6.5}>
           <h3 className="text-xl mb-1 font-semibold">
-            Tu reciclezi, firmele te premiaza. Afla despre campaniile de
+            Tu reciclezi, firmele te premiază. Află despre campaniile de
             reciclare.{" "}
           </h3>
           <Button
@@ -55,7 +55,7 @@ const About = () => {
             Campanii active
           </Button>
           <h3 className="text-xl mb-1 font-semibold">
-            Afla unde sunt cele mai apropiate puncte de colectare.
+            Află unde sunt cele mai apropiate puncte de colectare.
           </h3>
           <Button
             variant="outlined"
@@ -70,7 +70,7 @@ const About = () => {
             Puncte de colectare
           </Button>
           <h3 className="text-xl mb-1 font-semibold">
-            Pune un anunt sau colecteaza produsele oferite de alte persoane.
+            Pune un anunț sau colectează produsele oferite de alte persoane.
           </h3>
           <Button
             variant="outlined"
@@ -82,13 +82,13 @@ const About = () => {
             }}
             className="button"
           >
-            Forum
+            Anunțuri de produse
           </Button>
         </Grid>
       </Grid>
 
       <Grid container spacing={2} justify="center">
-        <h1>Fii la curent cu cele mai actuale articole de informare</h1>
+        <h1 style={{margin: '1.8em 0 1.5em 0'}}>Fii la curent cu cele mai actuale articole de informare</h1>
       </Grid>
 
       <div>

@@ -55,10 +55,9 @@ const Header = () => {
 
   const tabs = (
     <>
-      <Grid container justify="center" spacing={2}>
+      <Grid container justify="left" spacing={4}>
         <Link href="/">
           <Image
-            justify="left"
             alt="logo"
             href="/"
             src={logo}
@@ -105,6 +104,7 @@ const Header = () => {
           ))}
 
         <IconButton
+         style={{margin: '0 0 0 13em'}}
           aria-label="account of current user"
           aria-controls="menu-appbar"
           aria-haspopup="true"
@@ -186,8 +186,6 @@ const Header = () => {
           </Toolbar>
         </AppBar>
       </ElevationScroll>
-
-      <div className={classes.toolbarMargin} />
     </>
   );
 };

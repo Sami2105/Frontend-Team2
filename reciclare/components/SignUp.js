@@ -1,29 +1,17 @@
 import gql from "graphql-tag";
 import { useMutation } from "@apollo/client";
-import Form from "./styles/Form";
 import useForm from "../lib/useForm";
-import { CURRENT_USER_QUERY } from "./User";
-import Error from "./ErrorMessage";
 import Image from "next/image";
 import logo from "/images/Logo.png";
 import * as React from "react";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import {
-  FacebookLoginButton,
-  GoogleLoginButton,
-  InstagramLoginButton,
-} from "react-social-login-buttons";
-import FormDialog from "./layout/FormDialog";
 
 const theme = createTheme();
 
@@ -67,7 +55,6 @@ export default function SignUp() {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 2,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -83,7 +70,7 @@ export default function SignUp() {
             />
           </div>
           <Typography component="h1" variant="h5">
-            Logare
+            Înregistrare
           </Typography>
 
           <Box
@@ -96,7 +83,7 @@ export default function SignUp() {
               required
               fullWidth
               id="name"
-              label="Full name"
+              label="Nume complet"
               name="name"
               autoComplete="name"
               autoFocus
@@ -108,7 +95,7 @@ export default function SignUp() {
               required
               fullWidth
               id="email"
-              label="Email Address"
+              label="Adresa de mail"
               name="email"
               autoComplete="email"
               autoFocus
@@ -120,7 +107,7 @@ export default function SignUp() {
               required
               fullWidth
               name="password"
-              label="Password"
+              label="Parola"
               type="password"
               id="password"
               autoComplete="current-password"
@@ -142,7 +129,7 @@ export default function SignUp() {
               }}
               className="button"
             >
-              Logare
+              Înregistrare
             </Button>
             <Grid container mt>
               <Grid item xs></Grid>

@@ -15,27 +15,11 @@ import Alert from "@mui/material/Alert";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Snackbar from "@mui/material/Snackbar";
 import Profil from "components/layout/Profil";
-import { Container, Grid, Typography, Avatar } from "@material-ui/core";
+import { Grid, Typography, Avatar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useTheme } from "@mui/material/styles";
 
-const useStyles = makeStyles((theme) => ({
-  snsIcon: {
-    width: "30px",
-    height: "30px",
-
-    [theme.breakpoints.down("xs")]: {
-      width: "25px",
-      height: "25px",
-    },
-    "&:hover": {
-      color: theme.palette.info.main,
-    },
-  },
-}));
-
 const setariProfil = () => {
-  const classes = useStyles();
 
   const StyledPaper = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",

@@ -43,13 +43,7 @@ const useClassStyles = makeStyles((theme) => ({
       color: theme.palette.info.main,
     },
   },
-  Button: {
-    backgroundColor: theme.Button.color,
-    color: "#FFFFFF",
-    "&:hover": {
-      backgroundColor: theme.Button.color,
-    },
-  },
+  
 }));
 
 export default useClassStyles;

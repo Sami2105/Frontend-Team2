@@ -25,7 +25,7 @@ function Map() {
   }, []);
 
   return (
-    <Grid container id="my-map" style={{ height: 800, width: 800 }}></Grid>
+    <Grid container id="my-map" style={{ height: 500, width: 1000 }}></Grid>
   );
 }
 
