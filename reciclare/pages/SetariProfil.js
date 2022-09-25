@@ -5,9 +5,7 @@ import Stack from "@mui/material/Stack";
 import MenuItem from "@mui/material/MenuItem";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
-
 import * as React from "react";
-
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
@@ -16,8 +14,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Alert from "@mui/material/Alert";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Snackbar from "@mui/material/Snackbar";
-
-import { styled } from "@mui/material/styles";
+import Profil from "components/layout/Profil";
 import { Container, Grid, Typography, Avatar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useTheme } from "@mui/material/styles";
@@ -73,145 +70,145 @@ const setariProfil = () => {
   };
 
   return (
-    <Layout
-      // type your page title and page description.
-      title=" Setări Profil "
-    >
-      <Container maxWidth="lg">
-        <Grid container direction="column">
-          <Grid item>
-            <Typography variant="h1" align="left" gutterBottom>
-              <MenuItem style={{ margin: "0.5em 1.3em" }}>
-                <Avatar />
-              </MenuItem>
-              Setări Cont / Profil
-              <br />
-              <Typography variant="h2" align="left">
-                <Button href="/setariProfil">Profil</Button>
-              </Typography>
-              <Typography variant="h2" align="left">
-                <Button href="/resetareParola">Parolă</Button>
-              </Typography>
-              <Typography variant="h2" align="left">
-                <Button href="/setariNotificari">Notificări</Button>
-              </Typography>
-            </Typography>
-          </Grid>
-          <Grid item container alignItems="center">
-            <Grid
-              item
-              container
-              md={4}
-              direction="column"
-              alignItems="center"
-            ></Grid>
-            <Grid item container md={8}>
-              <Typography variant="body1">
-                <br />
-                <Typography variant="h2" align="left">
-                  Avatar
-                </Typography>
-                <br />
-                <MenuItem
-                  sx={{ m: 1, width: "5ch" }}
-                  hidden
-                  accept="image/*"
-                  multiple
-                  type="file"
-                >
-                  <Avatar />
-                </MenuItem>
-                Schimbați avatarul!
-                <p>
-                  {" "}
-                  <TextField
-                    required
-                    id="outlined-required"
-                    label="Nume complet"
-                    defaultValue=""
-                    sx={{ width: "32ch" }}
-                  />
-                </p>
-                <Typography variant="body1">
-                  <p>
-                    {" "}
-                    <TextField
-                      required
-                      id="outlined"
-                      label="Adresa"
-                      defaultValue=""
-                      sx={{ width: "32ch" }}
-                    />
-                  </p>
-                </Typography>
-                <Typography variant="body1">
-                  <p>
-                    {" "}
-                    <TextField
-                      id="outlined"
-                      label="Nr. tel."
-                      defaultValue=""
-                      sx={{ width: "32ch" }}
-                    />
-                  </p>
-                </Typography>
-                <br />
-                <Stack direction="row" spacing={3} sx={{ width: "100%" }}>
-                  <Button variant="contained">Anulează</Button>
-                  <Button variant="contained" onClick={handleClickOpen}>
-                    Șterge cont
-                  </Button>
-                  <Dialog
-                    fullScreen={fullScreen}
-                    open={open}
-                    onClose={handleClose}
-                    aria-labelledby="responsive-dialog-title"
-                  >
-                    <DialogTitle id="responsive-dialog-title">
-                      {"Confirmare ștergere cont!"}
-                    </DialogTitle>
-                    <DialogContent>
-                      <DialogContentText>
-                        Doriți să ștergeți acest cont?
-                      </DialogContentText>
-                    </DialogContent>
-                    <DialogActions>
-                      <Button
-                        autoFocus
-                        onClick={handleClose}
-                        style={{ margin: "0.5em 0.5em" }}
-                      >
-                        Anulează
-                      </Button>
-                      <Button href="/" onClick={handleClose} autoFocus>
-                        Șterge
-                      </Button>
-                    </DialogActions>
-                  </Dialog>
-                  <Button variant="contained" onClick={handleClickk}>
-                    Salvează
-                  </Button>
-                  <Snackbar
-                    open={open}
-                    autoHideDuration={4000}
-                    onClose={handleClosee}
-                  >
-                    <Alert
-                      onClose={handleClosee}
-                      severity="success"
-                      sx={{ width: "100%" }}
-                    >
-                      Modificările au fost salvate cu succes!
-                    </Alert>
-                  </Snackbar>
-                </Stack>
-                <br />
-                <br />
-              </Typography>
-            </Grid>
-          </Grid>
+    <Layout title=" Setări Profil ">
+      <Grid container spacing={8}>
+        <Grid item>
+          <Profil></Profil>
         </Grid>
-      </Container>
+
+        <Grid item>
+          <Typography variant="h2" align="left">
+            Avatar
+          </Typography>
+          <MenuItem
+            sx={{ m: 1, width: "5ch" }}
+            hidden
+            accept="image/*"
+            multiple
+            type="file"
+          >
+            <Avatar />
+          </MenuItem>
+          Schimbați avatarul!
+          <div>
+            <TextField
+              required
+              id="outlined-required"
+              label="Nume complet"
+              defaultValue=""
+              sx={{ m: 1, width: "34ch" }}
+            />
+          </div>
+          <div>
+            <TextField
+              required
+              id="outlined"
+              label="Adresa"
+              defaultValue=""
+              sx={{ m: 1, width: "34ch" }}
+            />
+          </div>
+          <TextField
+            id="outlined"
+            label="Nr. tel."
+            defaultValue=""
+            sx={{ m: 1, width: "34ch" }}
+          />
+          <Stack direction="row" spacing={3} sx={{ width: "100%" }}>
+            <Button
+              variant="contained"
+              style={{
+                color: "#FFFFFF",
+                backgroundColor: "rgba(56, 129, 103, 1)",
+                padding: "0.5rem",
+              }}
+              className="button"
+            >
+              Anulează
+            </Button>
+            <Button
+              variant="contained"
+              style={{
+                color: "#FFFFFF",
+                backgroundColor: "rgba(56, 129, 103, 1)",
+                padding: "0.5rem",
+              }}
+              className="button"
+              onClick={handleClickOpen}
+            >
+              Șterge cont
+            </Button>
+            <Dialog
+              fullScreen={fullScreen}
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="responsive-dialog-title"
+            >
+              <DialogTitle id="responsive-dialog-title">
+                {"Confirmare ștergere cont!"}
+              </DialogTitle>
+              <DialogContent>
+                <DialogContentText>
+                  Doriți să ștergeți acest cont?
+                </DialogContentText>
+              </DialogContent>
+              <DialogActions>
+                <Button
+                  autoFocus
+                  onClick={handleClose}
+                  style={{
+                    color: "#FFFFFF",
+                    backgroundColor: "rgba(56, 129, 103, 1)",
+                    padding: "0.5rem",
+                  }}
+                  className="button"
+                >
+                  Anulează
+                </Button>
+                <Button
+                  href="/"
+                  onClick={handleClose}
+                  autoFocus
+                  style={{
+                    color: "#FFFFFF",
+                    backgroundColor: "rgba(56, 129, 103, 1)",
+                    padding: "0.5rem",
+                    margin: "0.5rem",
+                  }}
+                  className="button"
+                >
+                  Șterge
+                </Button>
+              </DialogActions>
+            </Dialog>
+            <Button
+              variant="contained"
+              onClick={handleClickk}
+              style={{
+                color: "#FFFFFF",
+                backgroundColor: "rgba(56, 129, 103, 1)",
+                padding: "0.5rem",
+              }}
+              className="button"
+            >
+              Salvează
+            </Button>
+            <Snackbar
+              open={open}
+              autoHideDuration={4000}
+              onClose={handleClosee}
+            >
+              <Alert
+                onClose={handleClosee}
+                severity="success"
+                sx={{ width: "100%" }}
+              >
+                Modificările au fost salvate cu succes!
+              </Alert>
+            </Snackbar>
+          </Stack>
+        </Grid>
+      </Grid>
     </Layout>
   );
 };

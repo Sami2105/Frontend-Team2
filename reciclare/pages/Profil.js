@@ -43,7 +43,7 @@ function TabPanel(props) {
     >
       {value === index && (
         <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
+          <div>{children}</div>
         </Box>
       )}
     </div>
@@ -76,88 +76,57 @@ const Profil = () => {
       // type your page title and page description.
       title="Profil"
     >
-      <Grid
-        container
-        spacing={8}
-        justify="center"
-        style={{ margin: "1.2em 0" }}
-      >
+      <Grid container spacing={8} justify="center">
         <Grid item xs={4}>
-          <Typography
-            variant="h4"
-            align="left"
-            style={{ margin: "1em 0em" }}
-            gutterBottom
-          >
-            <MenuItem style={{ margin: "0em 0.7em" }}>
+          <Typography variant="h4" align="left" gutterBottom>
+            <MenuItem>
               <Avatar style={{ width: 125, height: 125 }}></Avatar>
             </MenuItem>
             Nume cont
-            <br />
           </Typography>
 
-          <Typography
-            variant="subtitle2"
-            component="div"
-            style={{ margin: "1em 0em" }}
-          >
+          <Typography variant="subtitle2" component="div">
             <MailIcon></MailIcon>
-            <a style={{ margin: "0em 1em" }}>xxxxxxxxxxxx@yahoo.com</a>
+            <a>xxxxxxxxxxxx@yahoo.com</a>
           </Typography>
 
-          <Typography
-            variant="subtitle2"
-            component="div"
-            style={{ margin: "1em 0em" }}
-          >
+          <Typography variant="subtitle2" component="div">
             <CallIcon></CallIcon>
-            <a style={{ margin: "0em 1em" }}>07xxxxxxxx</a>
+            <a>07xxxxxxxx</a>
           </Typography>
 
-          <Typography
-            variant="subtitle2"
-            component="div"
-            style={{ margin: "0em 0em" }}
-          >
+          <Typography variant="subtitle2" component="div">
             <SettingsIcon></SettingsIcon>
-            <a
-              style={{ color: "blue", margin: "0em 1em" }}
-              href="/setariProfil"
-            >
+            <a style={{ color: "blue" }} href="/setariProfil">
               {"Setări profil"}
             </a>
           </Typography>
         </Grid>
 
         <Grid item xs={4}>
-          <Box sx={{ width: "120%" }}>
-            <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-              <Tabs
-                value={value}
-                onChange={handleChange}
-                aria-label="basic tabs example"
-              >
-                <Tab label="Donații" {...a11yProps(0)} />
-                <Tab label="Probleme" {...a11yProps(1)} />
-              </Tabs>
-            </Box>
-            <TabPanel value={value} index={0}>
-              <Grid>
-                <Cards></Cards>
-              </Grid>
-              <Grid style={{ margin: "2em 0em" }}>
-                <Cards></Cards>
-              </Grid>
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-              <Grid>
-                <Cards></Cards>
-              </Grid>
-              <Grid style={{ margin: "2em 0em" }}>
-                <Cards></Cards>
-              </Grid>
-            </TabPanel>
+          <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              aria-label="basic tabs example"
+            >
+              <Tab label="Donații" {...a11yProps(0)} />
+              <Tab label="Probleme" {...a11yProps(1)} />
+            </Tabs>
           </Box>
+          <TabPanel value={value} index={0}>
+            <div>
+              <Cards></Cards>
+            </div>
+            <div>
+              <Cards></Cards>
+            </div>
+          </TabPanel>
+          <TabPanel value={value} index={1}>
+            <Grid>
+              <Cards></Cards>
+            </Grid>
+          </TabPanel>
         </Grid>
       </Grid>
     </Layout>

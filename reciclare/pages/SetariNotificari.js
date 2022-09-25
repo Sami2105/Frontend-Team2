@@ -11,6 +11,7 @@ import Snackbar from "@mui/material/Snackbar";
 import Stack from "@mui/material/Stack";
 import Alert from "@mui/material/Alert";
 import * as React from "react";
+import Profil from "components/layout/Profil";
 
 import { Container, Grid, Typography, Avatar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -66,114 +67,89 @@ const setariNotificari = () => {
       // type your page title and page description.
       title=" Setări Notificări "
     >
-      <Container maxWidth="lg">
-        <Grid container direction="column" spacing={8}>
-          <Grid item>
-            <Typography variant="h1" align="left" gutterBottom>
-              <MenuItem style={{ margin: "0.5em 1.3em" }}>
-                <Avatar />
-              </MenuItem>
-              Setări Cont / Notificări
-              <br />
-              <Typography variant="h2" align="left">
-                <Button href="/setariProfil">Profil</Button>
-              </Typography>
-              <Typography variant="h2" align="left">
-                <Button href="/resetareParola">Parolă</Button>
-              </Typography>
-              <Typography variant="h2" align="left">
-                <Button href="/setariNotificari">Notificări</Button>
-              </Typography>
-            </Typography>
-          </Grid>
-
-          <Grid item container spacing={2} alignItems="center">
-            <Grid
-              item
-              container
-              md={4}
-              direction="column"
-              alignItems="center"
-              spacing={2}
-            ></Grid>
-            <Grid item container md={8}>
-              <Typography variant="body1">
-                <br />
-                <FormControl component="fieldset" variant="standard">
-                  <FormLabel component="legend" variant="h2">
-                    Notificări
-                  </FormLabel>
-                  <FormGroup>
-                    <FormControlLabel
-                      control={
-                        <Switch
-                          checked={state.a}
-                          onChange={handleChange}
-                          name="a"
-                        />
-                      }
-                      label="Email"
-                    />
-                    <FormHelperText style={{ margin: "1em 4em" }}>
-                      Veți fii anunțat prin email atunci când se postează un
-                      anunț nou!
-                    </FormHelperText>
-                    <FormControlLabel
-                      control={
-                        <Switch
-                          checked={state.b}
-                          onChange={handleChange}
-                          name="b"
-                        />
-                      }
-                      label="Anunțuri donații"
-                    />
-                    <FormHelperText style={{ margin: "1em 4em" }}>
-                      Veți primi noi informații în legătură cu anunțurile despre
-                      donații!
-                    </FormHelperText>
-                    <FormControlLabel
-                      control={
-                        <Switch
-                          checked={state.c}
-                          onChange={handleChange}
-                          name="c"
-                        />
-                      }
-                      label="Anunțuri campanii"
-                    />
-                    <FormHelperText style={{ margin: "1em 4em" }}>
-                      Veți primi noi informații în legătură cu anunțurile despre
-                      campanii!
-                    </FormHelperText>
-                  </FormGroup>
-                </FormControl>
-                <br />
-                <br />
-                <Stack direction="row" spacing={30} sx={{ width: "100%" }}>
-                  <Button variant="contained">Anulează</Button>
-                  <Button variant="contained" onClick={handleClick}>
-                    Salvează
-                  </Button>
-                  <Snackbar
-                    open={open}
-                    autoHideDuration={4000}
-                    onClose={handleClose}
-                  >
-                    <Alert
-                      onClose={handleClose}
-                      severity="success"
-                      sx={{ width: "100%" }}
-                    >
-                      Notificările au fost salvate cu succes!
-                    </Alert>
-                  </Snackbar>
-                </Stack>
-              </Typography>
-            </Grid>
-          </Grid>
+      <Grid container spacing={8}>
+        <Grid item>
+          <Profil></Profil>
         </Grid>
-      </Container>
+
+        <Grid item>
+          <FormControl component="fieldset" variant="standard">
+            <FormLabel component="legend" variant="h2">
+              Notificări
+            </FormLabel>
+            <FormGroup>
+              <FormControlLabel
+                control={
+                  <Switch checked={state.a} onChange={handleChange} name="a" />
+                }
+                label="Email"
+              />
+              <FormHelperText>
+                Veți fii anunțat prin email atunci când se postează un anunț
+                nou!
+              </FormHelperText>
+              <FormControlLabel
+                control={
+                  <Switch checked={state.b} onChange={handleChange} name="b" />
+                }
+                label="Anunțuri donații"
+              />
+              <FormHelperText>
+                Veți primi noi informații în legătură cu anunțurile despre
+                donații!
+              </FormHelperText>
+              <FormControlLabel
+                control={
+                  <Switch checked={state.c} onChange={handleChange} name="c" />
+                }
+                label="Anunțuri campanii"
+              />
+              <FormHelperText>
+                Veți primi noi informații în legătură cu anunțurile despre
+                campanii!
+              </FormHelperText>
+            </FormGroup>
+          </FormControl>
+
+          <Stack direction="row" spacing={10} sx={{ m: 1, width: "100%" }}>
+            <Button
+              variant="contained"
+              style={{
+                color: "#FFFFFF",
+                backgroundColor: "rgba(56, 129, 103, 1)",
+                padding: "0.5rem",
+              }}
+              className="button"
+            >
+              Anulează
+            </Button>
+
+            <Button
+              variant="contained"
+              onClick={handleClick}
+              style={{
+                margin: "0 0 0 14rem ",
+                color: "#FFFFFF",
+                backgroundColor: "rgba(56, 129, 103, 1)",
+                padding: "0.5rem",
+              }}
+              className="button"
+            >
+              Salvează
+            </Button>
+
+            <Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
+              <Alert
+                onClose={handleClose}
+                severity="success"
+                sx={{ width: "100%" }}
+              >
+                Notificările au fost salvate cu succes!
+              </Alert>
+            </Snackbar>
+          </Stack>
+        </Grid>
+      </Grid>
     </Layout>
   );
 };

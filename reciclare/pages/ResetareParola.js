@@ -2,7 +2,7 @@ import Layout from "components/layout/Layout";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import MenuItem from "@mui/material/MenuItem";
-
+import Profil from "components/layout/Profil";
 import * as React from "react";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
@@ -79,170 +79,147 @@ const resetareParola = () => {
       // type your page title and page description.
       title=" Resetare parolă "
     >
-      <Container maxWidth="lg">
-      <Grid container direction="column">
-          <Grid item>
-            <Typography variant="h1" align="left" gutterBottom>
-              <MenuItem style={{ margin: "0.5em 1.3em" }}>
-                <Avatar />
-              </MenuItem>
-              Setări Cont / Resetare parolă
-              <br />
-              <Typography variant="h2" align="left">
-                <Button href="/setariProfil">Profil</Button>
-              </Typography>
-              <Typography variant="h2" align="left">
-                <Button href="/resetareParola">Parolă</Button>
-              </Typography>
-              <Typography variant="h2" align="left">
-                <Button href="/setariNotificari">Notificări</Button>
-              </Typography>
-            </Typography>
-          </Grid>
-          <Grid item container alignItems="center">
-            <Grid
-              item
-              container
-              md={4}
-              direction="column"
-              alignItems="center"
-            ></Grid>
-            <Grid item container md={8}>
-              <Typography variant="body1">
-                <br />
-                Adăugați parola curentă pentru a schimba parola!
-                <p>
-                {" "}
-                  <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
-                    <InputLabel htmlFor="outlined-adornment-password">
-                      Parola curentă!
-                    </InputLabel>
-                    <OutlinedInput
-                      id="outlined-adornment-password"
-                      type={values.showPassword ? "text" : "password"}
-                      value={values.password}
-                      onChange={handleChange("password")}
-                      endAdornment={
-                        <InputAdornment position="end">
-                          <IconButton
-                            aria-label="toggle password visibility"
-                            onClick={handleClickShowPassword}
-                            onMouseDown={handleMouseDownPassword}
-                            edge="end"
-                          >
-                            {values.showPassword ? (
-                              <VisibilityOff />
-                            ) : (
-                              <Visibility />
-                            )}
-                          </IconButton>
-                        </InputAdornment>
-                      }
-                      label="Parola curentă!"
-                    />
-                  </FormControl>
-                </p>
-                <Typography variant="body1">
-                  <br />
-                  Adăugați noua parolă!
-                  <p>
-                  {" "}
-                    <FormControl
-                      sx={{ m: 1, width: "25ch" }}
-                      variant="outlined"
-                    >
-                      <InputLabel htmlFor="outlined-adornment-password">
-                        Parola nouă!
-                      </InputLabel>
-                      <OutlinedInput
-                        id="outlined-adornment-password"
-                        type={values.showPassword ? "text" : "password"}
-                        value={values.password}
-                        onChange={handleChange("password")}
-                        endAdornment={
-                          <InputAdornment position="end">
-                            <IconButton
-                              aria-label="toggle password visibility"
-                              onClick={handleClickShowPassword}
-                              onMouseDown={handleMouseDownPassword}
-                              edge="end"
-                            >
-                              {values.showPassword ? (
-                                <VisibilityOff />
-                              ) : (
-                                <Visibility />
-                              )}
-                            </IconButton>
-                          </InputAdornment>
-                        }
-                        label="Parola nouă!"
-                      />
-                    </FormControl>
-                  </p>
-                </Typography>
-                <Typography variant="body1">
-                  <br />
-                  Confirmați noua parolă!
-                  <p>
-                  {" "}
-                    <FormControl
-                      sx={{ m: 1, width: "25ch" }}
-                      variant="outlined"
-                    >
-                      <InputLabel htmlFor="outlined-adornment-password">
-                        Parola nouă!
-                      </InputLabel>
-                      <OutlinedInput
-                        id="outlined-adornment-password"
-                        type={values.showPassword ? "text" : "password"}
-                        value={values.password}
-                        onChange={handleChange("password")}
-                        endAdornment={
-                          <InputAdornment position="end">
-                            <IconButton
-                              aria-label="toggle password visibility"
-                              onClick={handleClickShowPassword}
-                              onMouseDown={handleMouseDownPassword}
-                              edge="end"
-                            >
-                              {values.showPassword ? (
-                                <VisibilityOff />
-                              ) : (
-                                <Visibility />
-                              )}
-                            </IconButton>
-                          </InputAdornment>
-                        }
-                        label="Parola nouă!"
-                      />
-                    </FormControl>
-                  </p>
-                </Typography>
-                <br />
-                <Stack direction="row" spacing={12} sx={{ width: "100%" }}>
-                  <Button variant="contained">Anulează</Button>
-                  <Button variant="contained" onClick={handleClick}>
-                    Salvează
-                  </Button>
-                  <Snackbar
-                    open={open}
-                    autoHideDuration={4000}
-                    onClose={handleClose}
-                  >
-                    <Alert
-                      onClose={handleClose}
-                      severity="success"
-                      sx={{ width: "100%" }}
-                    >
-                      Parola a fost modificată cu succes!
-                    </Alert>
-                  </Snackbar>
-                </Stack>
-              </Typography>
-            </Grid>
-          </Grid>
+      <Grid container spacing={8}>
+        <Grid item>
+          <Profil></Profil>
         </Grid>
-      </Container>
+
+        <Grid item sx={{ m: 1 }}>
+          <div>
+            Adăugați parola curentă pentru a schimba parola!
+            <div>
+              <FormControl sx={{ width: "28ch" }} variant="outlined">
+                <InputLabel htmlFor="outlined-adornment-password">
+                  Parola curentă!
+                </InputLabel>
+                <OutlinedInput
+                  id="outlined-adornment-password"
+                  type={values.showPassword ? "text" : "password"}
+                  value={values.password}
+                  onChange={handleChange("password")}
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                        edge="end"
+                      >
+                        {values.showPassword ? (
+                          <VisibilityOff />
+                        ) : (
+                          <Visibility />
+                        )}
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                  label="Parola curentă!"
+                />
+              </FormControl>
+            </div>
+          </div>
+          <div>
+            Adăugați noua parolă!
+            <div>
+              <FormControl sx={{ width: "28ch" }} variant="outlined">
+                <InputLabel htmlFor="outlined-adornment-password">
+                  Parola nouă!
+                </InputLabel>
+                <OutlinedInput
+                  id="outlined-adornment-password"
+                  type={values.showPassword ? "text" : "password"}
+                  value={values.password}
+                  onChange={handleChange("password")}
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                        edge="end"
+                      >
+                        {values.showPassword ? (
+                          <VisibilityOff />
+                        ) : (
+                          <Visibility />
+                        )}
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                  label="Parola nouă!"
+                />
+              </FormControl>
+            </div>
+          </div>
+          <div>
+            Confirmați noua parolă!
+            <div>
+              <FormControl sx={{ width: "28ch" }} variant="outlined">
+                <InputLabel htmlFor="outlined-adornment-password">
+                  Parola nouă!
+                </InputLabel>
+                <OutlinedInput
+                  id="outlined-adornment-password"
+                  type={values.showPassword ? "text" : "password"}
+                  value={values.password}
+                  onChange={handleChange("password")}
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                        edge="end"
+                      >
+                        {values.showPassword ? (
+                          <VisibilityOff />
+                        ) : (
+                          <Visibility />
+                        )}
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                  label="Parola nouă!"
+                />
+              </FormControl>
+            </div>
+          </div>
+          <Stack direction="row" spacing={10} sx={{ m: 1, width: "100%" }}>
+            <Button
+              variant="contained"
+              style={{
+                color: "#FFFFFF",
+                backgroundColor: "rgba(56, 129, 103, 1)",
+                padding: "0.5rem",
+              }}
+              className="button"
+            >
+              Anulează
+            </Button>
+            <Button
+              variant="contained"
+              onClick={handleClick}
+              className="button"
+              style={{
+                color: "#FFFFFF",
+                backgroundColor: "rgba(56, 129, 103, 1)",
+                padding: "0.5rem",
+              }}
+            >
+              Salvează
+            </Button>
+            <Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
+              <Alert
+                onClose={handleClose}
+                severity="success"
+                sx={{ width: "100%" }}
+              >
+                Parola a fost modificată cu succes!
+              </Alert>
+            </Snackbar>
+          </Stack>
+        </Grid>
+      </Grid>
     </Layout>
   );
 };
