@@ -77,17 +77,15 @@ export default function SignIn() {
   return (
     <ThemeProvider theme={theme}>
       <Container>
-        <CssBaseline />
         <Box
           sx={{
-            marginTop: 20,
-            mb: 20,
+            marginTop: 2,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
           }}
         >
-          <div style={{ margin: "0 18em" }}>
+          <div>
             <Image
               alt="Logo"
               align="center"
@@ -104,10 +102,9 @@ export default function SignIn() {
             component="form"
             onSubmit={handleSubmit}
             noValidate
-            sx={{ mt: 1 }}
+            sx={{ m: 1 }}
           >
             <TextField
-              margin="normal"
               required
               fullWidth
               id="email"
@@ -117,9 +114,9 @@ export default function SignIn() {
               autoFocus
               value={inputs.email}
               onChange={handleChange}
+              sx={{ m: 1 }}
             />
             <TextField
-              margin="normal"
               required
               fullWidth
               name="password"
@@ -129,44 +126,51 @@ export default function SignIn() {
               autoComplete="current-password"
               value={inputs.password}
               onChange={handleChange}
+              sx={{ m: 1 }}
             />
             <Button
               type="submit"
-              margin="normal"
               required
               fullWidth
               variant="contained"
               size="large"
+              style={{
+                color: "#FFFFFF",
+                backgroundColor: "rgba(56, 129, 103, 1)",
+                padding: "0.5rem",
+                margin: "0.5em",
+              }}
+              className="button"
             >
               Sign In
             </Button>
-            <div align=" center" style={{ margin: "0em 1em", color: "black" }}>
+            <div align=" center" style={{ color: "black" }}>
               <Typography align=" center" variant="subtitle1" component="div">
-                Ți-ai uitat parola? <FormDialog></FormDialog>
+                Ți-ai uitat parola? <FormDialog className="button"></FormDialog>
               </Typography>
             </div>
 
-            <div style={{ margin: "0.8em 18.5em" }}>
-              <Typography variant="h6" component="div">
+            <div>
+              <Typography variant="h6" component="div" align="center">
                 SAU
               </Typography>{" "}
             </div>
 
-            <div className="form-group p-4">
+            <div>
               <GoogleLoginButton onClick={() => alert("Hello")} />
             </div>
-            <div className="form-group p-4">
+            <div>
               <FacebookLoginButton onClick={() => alert("Hello")} />
             </div>
-            <div className="form-group p-4">
+            <div>
               <InstagramLoginButton onClick={() => alert("Hello")} />
             </div>
 
-            <div align=" center" style={{ margin: "1em 1em", color: "black" }}>
+            <div align=" center">
               <Typography align=" center" variant="subtitle1" component="div">
-                Nu ai un cont?{" "}
+                Nu ai un cont?
                 <Link color="blue" underline="none" href="/inregistrare">
-                  {"Înregistrare"}
+                  {" Înregistrare"}
                 </Link>
               </Typography>
             </div>

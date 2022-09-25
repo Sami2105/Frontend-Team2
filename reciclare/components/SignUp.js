@@ -67,14 +67,13 @@ export default function SignUp() {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 20,
-            mb: 20,
+            marginTop: 2,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
           }}
         >
-          <div style={{ margin: "0 18em" }}>
+          <div>
             <Image
               alt="Logo"
               align="center"
@@ -91,10 +90,9 @@ export default function SignUp() {
             component="form"
             onSubmit={handleSubmit}
             noValidate
-            sx={{ mt: 1 }}
+            sx={{ m: 1 }}
           >
             <TextField
-              margin="normal"
               required
               fullWidth
               id="name"
@@ -104,9 +102,9 @@ export default function SignUp() {
               autoFocus
               value={inputs.name}
               onChange={handleChange}
+              sx={{ m: 1 }}
             />
             <TextField
-              margin="normal"
               required
               fullWidth
               id="email"
@@ -116,9 +114,9 @@ export default function SignUp() {
               autoFocus
               value={inputs.email}
               onChange={handleChange}
+              sx={{ m: 1 }}
             />
             <TextField
-              margin="normal"
               required
               fullWidth
               name="password"
@@ -128,14 +126,21 @@ export default function SignUp() {
               autoComplete="current-password"
               value={inputs.password}
               onChange={handleChange}
+              sx={{ m: 1 }}
             />
             <Button
               type="submit"
-              margin="normal"
               required
               fullWidth
               variant="contained"
               size="large"
+              style={{
+                color: "#FFFFFF",
+                backgroundColor: "rgba(56, 129, 103, 1)",
+                padding: "0.5rem",
+                margin: "0.5rem",
+              }}
+              className="button"
             >
               Logare
             </Button>
