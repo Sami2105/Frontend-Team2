@@ -1,8 +1,6 @@
-import React, { useRef, useEffect, useState } from "react";
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import React, { useEffect, useState } from "react";
 import { initializeMap } from "../map/initializeMap";
-
+import { Grid } from "@material-ui/core";
 const mapboxgl = require("mapbox-gl/dist/mapbox-gl.js");
 
 function Map() {
@@ -26,29 +24,8 @@ function Map() {
     setMap(map);
   }, []);
 
-  /*  useEffect(() => {
-        if(pageIsMounted) {
-            Map.on("load", function () {
-                addDataLayer(Map, data);
-            });
-        }
-    }, [pageIsMounted, setMap, Map]);  */
-
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css"
-          rel="stylesheet"
-        />
-      </Head>
-
-      <main className={styles.main}>
-        <div id="my-map" style={{ height: 900, width: 900 }} />
-      </main>
-    </div>
+    <Grid container id="my-map" style={{ height: 800, width: 800 }}></Grid>
   );
 }
 
