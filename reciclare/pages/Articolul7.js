@@ -1,100 +1,73 @@
 import React from "react";
-import { useForm } from "react-hook-form";
 import Layout from "components/layout/Layout";
 import Image from "next/image";
-import Articol1 from "/images/Articol1.png";
-import DoneOutlineIcon from "@mui/icons-material/DoneOutline";
-import { Container, Grid, Typography, Avatar } from "@material-ui/core";
+import Articol7 from "/images/Articol7.png";
+import { Grid, Typography } from "@material-ui/core";
 
-const Articolul7= () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const myfun = (d) => {
-    alert(d.fullname + " form " + d.email);
-  };
+const Articolul7 = () => {
   return (
-    <Layout
-      // type your page title and page description.
-      title="Articol despre "
-    >
-      <h1 align="center" style={{ margin: "0em 0em" }}>
-        Ce este reciclarea?
-      </h1>
-      <h1 align="center" style={{ margin: "0em 0em" }}>
-        Beneficii si tipuri de materiale reciclabile
-      </h1>
-      <Grid
-        container
-        spacing={0}
-        justify="center"
-        style={{ margin: "0em 0em" }}
-      >
-        <Grid item style={{ margin: "1em 0em", width: "55%" }}>
-          <Grid item style={{ margin: "2em 12em", width: "70%" }}>
-            <h2 style={{ margin: "0.5em 2em", color: "#008037" }}>
-              1. Ce este reciclarea?
-            </h2>
-
-            <div align="left">
-              Beneficiile reciclarii sunt multiple, de aceea este foarte
-              important ca fiecare dintre noi sa inteleaga faptul ca in spatele
-              legilor drastice privind reciclarea stau idei si principii solide,
-              benefice comunitatilor.
-            </div>
-
-            <h2 style={{ margin: "0.5em 2em", color: "#008037" }}>
-              2. Beneficiile reciclarii pentru mediu
-            </h2>
-
-            <div align="left" style={{ margin: "1em 0em" }}>
-              <DoneOutlineIcon style={{ margin: "0em 0em" }}></DoneOutlineIcon>
-              prin reciclare se diminueaza considerabil depunearea deseurilor la
-              gropile de gunoi care nu numai ca polueaza masiv mediu dar creeaza
-              si o imagine dezolanta a oraselor, distrugand sanatatea celor care
-              locuiesc in preajma lor
-            </div>
-
-            <div align="left" style={{ margin: "1em 0em" }}>
-              <DoneOutlineIcon style={{ margin: "0em 0em" }}></DoneOutlineIcon>
-              recicland, poluantii eliberati de obicei in apa si aer prin
-              depunerea deseurilor la gropile de gunoi, se diminueaza
-              considerabil
-            </div>
-
-            <div align="left" style={{ margin: "1em 0em" }}>
-              <DoneOutlineIcon style={{ margin: "0em 0em" }}></DoneOutlineIcon>
-              prin reciclare se reduc emisiile de gaze cu efect de sera din
-              atmosfera. Acest lucru se realizeaza prin inlocuirea materiei
-              prime virgine folosite, cu materie prima secundara, rezultata in
-              urma reciclarii.
-            </div>
-
-            <h2 style={{ margin: "0.5em 2em", color: "#008037" }}>
-              3. Ce materiale pot fi reciclate?
-            </h2>
-
-            <div align="left">
-              In zilele noastre, cea mai mare parte din produsele diverselor
-              industrii pot fi reciclate: ambalaje, sticla, metal, electrice si
-              electronice, baterii, anvelope si mase plastice, baterii, ulei
-              uzat si nu numai.
-            </div>
-          </Grid>
-        </Grid>
-
-        <Grid item align="center">
-          <div style={{ margin: "0em 2.5em" }}>
+    <Layout title="Beneficiile reciclării asupra mediului înconjurător">
+      <Typography variant="h1" align="center" style={{margin: '1.8em 0 1.2em 0'}} gutterBottom>
+      Beneficiile reciclării asupra mediului înconjurător
+      </Typography>
+      <Grid container spacing={1} justify="center">
+        <Grid item xs={6}>
+          <div>
             <Image
-              alt="Articol1"
+              alt="Articol7"
               align="center"
-              src={Articol1}
+              src={Articol7}
               width={600}
               height={600}
             />
           </div>
+        </Grid>
+        <Grid item xs={6}>
+          <Grid item>
+            <h2 style={{ color: "#388167" }} align="center">1.</h2>
+            <h3>
+              Prin reciclare, oamenii pot împiedica milioane de tone de
+              materiale să intre în gropile de gunoi, economisind spațiu pentru
+              gunoiul care nu poate fi reutilizat. Gropile de gunoi nu doar
+              poluează mediul înconjurător, ci și îngreunează frumusețea
+              orașului.
+            </h3>
+            <h2 style={{ color: "#388167" }} align="center">2.</h2>
+            <h3>
+              Reciclarea reduce nevoia de extracție (exploatare, exploatare
+              în cariere și exploatare forestieră), rafinare și prelucrare a
+              materiilor prime, toate acestea creând o poluare substanțială a
+              aerului și apei. Poluanții care sunt eliberați în aer și apă pot
+              fi reduse foarte mult cu o creștere a reciclării.
+            </h3>
+            <h2 style={{ color: "#388167" }} align="center">3.</h2>
+            <h3>
+              Deoarece reciclarea economisește energie, reduce și emisiile de
+              gaze cu efect de seră, ceea ce ajută la combaterea schimbărilor
+              climatice.
+            </h3>
+            <h2 style={{ color: "#388167" }} align="center">4.</h2>
+            <h3>
+              Utilizarea materialelor reciclate în procesul de fabricație
+              utilizează mult mai puțină energie decât cea necesară pentru
+              producerea de noi produse din materii prime și în comparație cu
+              toate costurile asociate, inclusiv transportul etc., deoarece
+              acestea sunt materiale pregătite pentru industrie. Reduce foarte
+              mult cantitatea de energie utilizată zilnic, nefiind nevoie să
+              producă noi materiale.
+            </h3>
+            <h2 style={{ color: "#388167" }} align="center">5.</h2>
+            <h3>
+              Când reciclăm, materialele uzate sunt transformate în produse
+              noi, reducând nevoia de a consuma resurse naturale. Dacă
+              materialele folosite nu sunt reciclate, se realizează produse noi
+              prin extragerea materiei prime proaspete de pe Pământ, prin
+              minerit și silvicultură. Reciclarea ajută la conservarea
+              resurselor naturale ale Pământului, cum ar fi materii prime,
+              minerale, copaci etc. Protejează habitatele naturale pentru viitor
+              și conservă resursele naturale pentru generațiile viitoare.
+            </h3>
+          </Grid>
         </Grid>
       </Grid>
     </Layout>

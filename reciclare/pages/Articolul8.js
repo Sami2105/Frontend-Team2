@@ -1,100 +1,77 @@
 import React from "react";
-import { useForm } from "react-hook-form";
 import Layout from "components/layout/Layout";
 import Image from "next/image";
-import Articol1 from "/images/Articol1.png";
-import DoneOutlineIcon from "@mui/icons-material/DoneOutline";
-import { Container, Grid, Typography, Avatar } from "@material-ui/core";
+import Articol8 from "/images/Articol8.png";
+import { Grid, Typography } from "@material-ui/core";
 
 const Articolul8 = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const myfun = (d) => {
-    alert(d.fullname + " form " + d.email);
-  };
   return (
-    <Layout
-      // type your page title and page description.
-      title="Articol despre "
-    >
-      <h1 align="center" style={{ margin: "0em 0em" }}>
-        Ce este reciclarea?
-      </h1>
-      <h1 align="center" style={{ margin: "0em 0em" }}>
-        Beneficii si tipuri de materiale reciclabile
-      </h1>
-      <Grid
-        container
-        spacing={0}
-        justify="center"
-        style={{ margin: "0em 0em" }}
-      >
-        <Grid item style={{ margin: "1em 0em", width: "55%" }}>
-          <Grid item style={{ margin: "2em 12em", width: "70%" }}>
-            <h2 style={{ margin: "0.5em 2em", color: "#008037" }}>
-              1. Ce este reciclarea?
-            </h2>
-
-            <div align="left">
-              Beneficiile reciclarii sunt multiple, de aceea este foarte
-              important ca fiecare dintre noi sa inteleaga faptul ca in spatele
-              legilor drastice privind reciclarea stau idei si principii solide,
-              benefice comunitatilor.
-            </div>
-
-            <h2 style={{ margin: "0.5em 2em", color: "#008037" }}>
-              2. Beneficiile reciclarii pentru mediu
-            </h2>
-
-            <div align="left" style={{ margin: "1em 0em" }}>
-              <DoneOutlineIcon style={{ margin: "0em 0em" }}></DoneOutlineIcon>
-              prin reciclare se diminueaza considerabil depunearea deseurilor la
-              gropile de gunoi care nu numai ca polueaza masiv mediu dar creeaza
-              si o imagine dezolanta a oraselor, distrugand sanatatea celor care
-              locuiesc in preajma lor
-            </div>
-
-            <div align="left" style={{ margin: "1em 0em" }}>
-              <DoneOutlineIcon style={{ margin: "0em 0em" }}></DoneOutlineIcon>
-              recicland, poluantii eliberati de obicei in apa si aer prin
-              depunerea deseurilor la gropile de gunoi, se diminueaza
-              considerabil
-            </div>
-
-            <div align="left" style={{ margin: "1em 0em" }}>
-              <DoneOutlineIcon style={{ margin: "0em 0em" }}></DoneOutlineIcon>
-              prin reciclare se reduc emisiile de gaze cu efect de sera din
-              atmosfera. Acest lucru se realizeaza prin inlocuirea materiei
-              prime virgine folosite, cu materie prima secundara, rezultata in
-              urma reciclarii.
-            </div>
-
-            <h2 style={{ margin: "0.5em 2em", color: "#008037" }}>
-              3. Ce materiale pot fi reciclate?
-            </h2>
-
-            <div align="left">
-              In zilele noastre, cea mai mare parte din produsele diverselor
-              industrii pot fi reciclate: ambalaje, sticla, metal, electrice si
-              electronice, baterii, anvelope si mase plastice, baterii, ulei
-              uzat si nu numai.
-            </div>
-          </Grid>
-        </Grid>
-
-        <Grid item align="center">
-          <div style={{ margin: "0em 2.5em" }}>
+    <Layout title="Beneficii economice">
+      <Typography variant="h1" align="center" style={{margin: '1.8em 0 1.2em 0'}} gutterBottom>
+      Beneficii economice
+      </Typography>
+      <Grid container spacing={1} justify="center">
+        <Grid item xs={6} align="center">
+          <div>
             <Image
-              alt="Articol1"
+              alt="Articol8"
               align="center"
-              src={Articol1}
+              src={Articol8}
               width={600}
               height={600}
             />
           </div>
+        </Grid>
+        <Grid item xs={6}>
+          <Grid item>
+            <h2 style={{ color: "#388167" }} align="center">
+              1.
+            </h2>
+            <h3>
+              Reciclarea contribuie la o economie circulară în care totul este
+              mai degrabă o resursă decât un deșeu. Programele de reciclare
+              desfășurate în mod corespunzător costă guvernului,
+              contribuabililor și proprietarilor de afaceri mai puțini bani
+              decât programele de deșeuri.
+            </h3>
+            <h2 style={{ color: "#388167" }} align="center">
+              2.
+            </h2>
+            <h3>
+              Oamenii pot chiar câștiga bani colectând materiale aprobate la o
+              unitate de reciclare din apropiere care va plăti pentru produs.
+            </h3>
+            <h2 style={{ color: "#388167" }} align="center">
+              3.
+            </h2>
+            <h3>
+              Este mai ieftin decât colectarea și eliminarea deșeurilor. Deci,
+              cu cât reciclezi mai mult și cu cât pui mai puțin la coșul de
+              gunoi, cu atât se economisesc mai mulți bani pentru a fi folosiți
+              pentru gospodării, afaceri și servicii publice locale.
+            </h3>
+            <h2 style={{ color: "#388167" }} align="center">
+              4.
+            </h2>
+            <h3>
+              Când materialele sunt reciclate la nivel local, îți stimulează
+              economia locală prin crearea mai multor locuri de muncă în
+              procesul de reciclare și creează un viitor mai bun pentru toți.
+              Eforturile dvs. în reciclare creează, de asemenea, noi afaceri,
+              cum ar fi colectarea, transportul, procesarea, fabricarea,
+              ambalarea și vânzarea produselor reciclate, deschizând calea către
+              un viitor mai ecologic.
+            </h3>
+            <h2 style={{ color: "#388167" }} align="center">
+              5.
+            </h2>
+            <h3>
+              Reciclarea poate stimula industria turistică a țărilor. Un mediu
+              curat este primitor și ar atrage pasionații de mediu din întreaga
+              lume. Acest aflux de turiști ar contribui și la rezerva valutară a
+              unei țări.
+            </h3>
+          </Grid>
         </Grid>
       </Grid>
     </Layout>

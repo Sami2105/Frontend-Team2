@@ -1,100 +1,64 @@
 import React from "react";
-import { useForm } from "react-hook-form";
 import Layout from "components/layout/Layout";
 import Image from "next/image";
-import Articol1 from "/images/Articol1.png";
-import DoneOutlineIcon from "@mui/icons-material/DoneOutline";
-import { Container, Grid, Typography, Avatar } from "@material-ui/core";
+import Articol6 from "/images/Articol6.png";
+import { Grid , Typography} from "@material-ui/core";
 
 const Articolul6 = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const myfun = (d) => {
-    alert(d.fullname + " form " + d.email);
-  };
   return (
-    <Layout
-      // type your page title and page description.
-      title="Articol despre "
-    >
-      <h1 align="center" style={{ margin: "0em 0em" }}>
-        Ce este reciclarea?
-      </h1>
-      <h1 align="center" style={{ margin: "0em 0em" }}>
-        Beneficii si tipuri de materiale reciclabile
-      </h1>
+    <Layout title="5 informații minimale despre reciclare">
+      <Typography variant="h1" align="center" style={{margin: '1.8em 0 1.2em 0'}} gutterBottom>
+      5 informații minimale despre reciclare
+      </Typography>
       <Grid
         container
-        spacing={0}
+        spacing={1}
         justify="center"
-        style={{ margin: "0em 0em" }}
       >
-        <Grid item style={{ margin: "1em 0em", width: "55%" }}>
-          <Grid item style={{ margin: "2em 12em", width: "70%" }}>
-            <h2 style={{ margin: "0.5em 2em", color: "#008037" }}>
-              1. Ce este reciclarea?
-            </h2>
-
-            <div align="left">
-              Beneficiile reciclarii sunt multiple, de aceea este foarte
-              important ca fiecare dintre noi sa inteleaga faptul ca in spatele
-              legilor drastice privind reciclarea stau idei si principii solide,
-              benefice comunitatilor.
-            </div>
-
-            <h2 style={{ margin: "0.5em 2em", color: "#008037" }}>
-              2. Beneficiile reciclarii pentru mediu
-            </h2>
-
-            <div align="left" style={{ margin: "1em 0em" }}>
-              <DoneOutlineIcon style={{ margin: "0em 0em" }}></DoneOutlineIcon>
-              prin reciclare se diminueaza considerabil depunearea deseurilor la
-              gropile de gunoi care nu numai ca polueaza masiv mediu dar creeaza
-              si o imagine dezolanta a oraselor, distrugand sanatatea celor care
-              locuiesc in preajma lor
-            </div>
-
-            <div align="left" style={{ margin: "1em 0em" }}>
-              <DoneOutlineIcon style={{ margin: "0em 0em" }}></DoneOutlineIcon>
-              recicland, poluantii eliberati de obicei in apa si aer prin
-              depunerea deseurilor la gropile de gunoi, se diminueaza
-              considerabil
-            </div>
-
-            <div align="left" style={{ margin: "1em 0em" }}>
-              <DoneOutlineIcon style={{ margin: "0em 0em" }}></DoneOutlineIcon>
-              prin reciclare se reduc emisiile de gaze cu efect de sera din
-              atmosfera. Acest lucru se realizeaza prin inlocuirea materiei
-              prime virgine folosite, cu materie prima secundara, rezultata in
-              urma reciclarii.
-            </div>
-
-            <h2 style={{ margin: "0.5em 2em", color: "#008037" }}>
-              3. Ce materiale pot fi reciclate?
-            </h2>
-
-            <div align="left">
-              In zilele noastre, cea mai mare parte din produsele diverselor
-              industrii pot fi reciclate: ambalaje, sticla, metal, electrice si
-              electronice, baterii, anvelope si mase plastice, baterii, ulei
-              uzat si nu numai.
-            </div>
-          </Grid>
-        </Grid>
-
-        <Grid item align="center">
-          <div style={{ margin: "0em 2.5em" }}>
+        <Grid item xs={6}>
+          <div>
             <Image
-              alt="Articol1"
+              alt="Articol6"
               align="center"
-              src={Articol1}
+              src={Articol6}
               width={600}
               height={600}
             />
           </div>
+        </Grid>
+        <Grid item xs={6}>
+          <Grid item >
+            <h2 style={{ margin: "0.5em 2em", color: "#008037" }}>
+            1. Cel mai reciclat articol din lume
+            </h2>
+            <h3 align="left">
+            Peste 50% din cutiile de aluminiu produse sunt reciclate.
+            </h3>
+            <h2 style={{ margin: "0.5em 2em", color: "#008037" }}>
+            2. Gospodăriile din Marea Britanie folosesc o mulțime de conserve
+            </h2>
+            <h3 align="left">
+            Fiecare gospodărie din Marea Britanie folosește aproximativ 600 de cutii de oțel pe an.
+            </h3>
+            <h2 style={{ margin: "0.5em 2em", color: "#008037" }}>
+            3. Sticla poate fi reciclată continuu
+            </h2>
+            <h3 align="left">
+            Sticla poate fi reciclată continuu fără a-și pierde integritatea sau a-i modifica calitatea.
+            </h3>
+            <h2 style={{ margin: "0.5em 2em", color: "#008037" }}>
+            4. Hârtiile renasc într-o săptămână
+            </h2>
+            <h3 align="left">
+            Ar putea dura doar șapte zile pentru ca reviste și ziare vechi să fie reciclate în altele noi.
+            </h3>
+            <h2 style={{ margin: "0.5em 2em", color: "#008037" }}>
+            5. Copacii mor
+            </h2>
+            <h3 align="left">
+            Pentru fiecare tonă de ziar reciclat, 17 copaci sunt salvați.
+            </h3>
+          </Grid>
         </Grid>
       </Grid>
     </Layout>

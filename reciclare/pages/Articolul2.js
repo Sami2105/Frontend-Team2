@@ -1,35 +1,29 @@
 import React from "react";
-import { useForm } from "react-hook-form";
 import Layout from "components/layout/Layout";
 import Image from "next/image";
 import Articol2 from "/images/Articol2.png";
-import { Grid} from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 
 const Articolul2 = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const myfun = (d) => {
-    alert(d.fullname + " form " + d.email);
-  };
   return (
-    <Layout
-      // type your page title and page description.
-      title="Articol despre "
-    >
-      <h1 align="center" style={{ margin: "0em 0em" }}>
-        Pași pentru reciclarea materialelor
-      </h1>
-      <Grid
-        container
-        spacing={0}
-        justify="center"
-        style={{ margin: "0em 0em" }}
-      >
-        <Grid item style={{ margin: "1em 0em", width: "55%" }}>
-          <Grid item style={{ margin: "2em 12em", width: "70%" }}>
+    <Layout title="Pași pentru reciclare">
+      <Typography variant="h1" align="center" style={{margin: '1.8em 0 1.2em 0'}} gutterBottom>
+      3 pași importanți ai reciclării
+      </Typography>
+      <Grid container spacing={1} justify="center">
+        <Grid item xs={6}>
+          <div>
+            <Image
+              alt="Articol2"
+              align="center"
+              src={Articol2}
+              width={600}
+              height={600}
+            />
+          </div>
+        </Grid>
+        <Grid item xs={6}>
+          <Grid item>
             <h3 align="left">
               Reciclarea include cei trei pași de mai jos, care creează o buclă
               continuă, reprezentată de simbolul familiar de reciclare.
@@ -79,18 +73,6 @@ const Articolul2 = () => {
               hârtie, produse din oțel, saci de gunoi.
             </h4>
           </Grid>
-        </Grid>
-
-        <Grid item align="center">
-          <div style={{ margin: "0em 2.5em" }}>
-            <Image
-              alt="Articol2"
-              align="center"
-              src={Articol2}
-              width={600}
-              height={600}
-            />
-          </div>
         </Grid>
       </Grid>
     </Layout>
