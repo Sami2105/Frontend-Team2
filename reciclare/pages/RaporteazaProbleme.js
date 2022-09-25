@@ -1,14 +1,11 @@
 import Layout from "components/layout/Layout";
-import Image from "next/image";
-import logo from "/images/Logo.png";
-import { Container, Grid, Typography, Avatar } from "@material-ui/core";
+import { Grid, Typography, Avatar } from "@material-ui/core";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import React, { useReducer } from "react";
 import DropZone from "components/layout/DropZone";
-import styles from "styles/Home.module.css";
 
 const currencies = [
   {
@@ -56,12 +53,7 @@ const Raportează = () => {
       title="Raportează o problemă"
       description="Nu fi indiferent la probleme."
     >
-      <Grid
-        container
-        spacing={2}
-        justify="center"
-        style={{ margin: "0em 0em" }}
-      >
+      <Grid container spacing={2} justify="center">
         <Box
           component="form"
           sx={{
@@ -78,18 +70,8 @@ const Raportează = () => {
           <Typography variant="h1" align="center" gutterBottom>
             Raportează o problemă
           </Typography>
-          <Grid
-            spacing={0}
-            align="center"
-            justify="center"
-            style={{ margin: "5em 0" }}
-          >
-            <Grid
-              spacing={0}
-              align="center"
-              justify="center"
-              style={{ margin: "2em 0" }}
-            >
+          <Grid spacing={0} align="center" justify="center">
+            <Grid spacing={0} align="center" justify="center">
               <div align="center">
                 <TextField
                   required
@@ -101,12 +83,7 @@ const Raportează = () => {
               </div>
             </Grid>
 
-            <Grid
-              spacing={0}
-              align="center"
-              justify="center"
-              style={{ margin: "2em 0" }}
-            >
+            <Grid spacing={0} align="center" justify="center">
               <div align="center">
                 <TextField
                   required
@@ -118,12 +95,7 @@ const Raportează = () => {
               </div>
             </Grid>
 
-            <Grid
-              spacing={0}
-              align="center"
-              justify="center"
-              style={{ margin: "2em 0" }}
-            >
+            <Grid spacing={0} align="center" justify="center">
               <div>
                 <TextField
                   id="outlined-select-currency"
@@ -143,19 +115,21 @@ const Raportează = () => {
               </div>
             </Grid>
 
-            <Grid container style={{ margin: "0 1rem " }}>
+            <Grid container>
               <DropZone data={data} dispatch={dispatch} />
             </Grid>
 
-            <Grid
-              container
-              spacing={0}
-              justify="center"
-              style={{ margin: "2em 0" }}
-            >
+            <Grid container spacing={0} justify="center">
               <Button
-                style={{ width: " 69ch", height: "8ch" }}
+                style={{
+                  width: " 69ch",
+                  height: "8ch",
+                  color: "#FFFFFF",
+                  backgroundColor: "rgba(56, 129, 103, 1)",
+                  padding: "0.5rem",
+                }}
                 variant="outlined"
+                className="button"
               >
                 Adaugă problema
               </Button>

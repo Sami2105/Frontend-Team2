@@ -1,7 +1,6 @@
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Image from "next/image";
-import logo from "/images/Logo.png";
 import carusel1 from "/images/carusel1.png";
 import carusel2 from "/images/carusel2.png";
 import carusel3 from "/images/carusel3.png";

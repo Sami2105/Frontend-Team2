@@ -38,8 +38,8 @@ const Anunturi = () => {
       title="Anunțuri"
       description="Unii donează, unii caută donatori."
     >
-      <Grid container spacing={2} style={{ margin: "0em 3.5em" }}>
-        <Grid item spacing={8} style={{ margin: "0em 3em" }}>
+      <Grid container>
+        <Grid item>
           <Typography align="center" variant="h1" gutterBottom>
             Anunțuri <br></br>
           </Typography>
@@ -49,8 +49,8 @@ const Anunturi = () => {
             prin donație produsele de care ai nevoie.
           </Typography>
 
-          <Grid container spacing={2} style={{ margin: "0em 3.5em" }}>
-            <Grid item spacing={8} style={{ margin: "4em 3em" }}>
+          <Grid container>
+            <Grid item>
               <Typography align="center" gutterBottom>
                 Status anunț
               </Typography>
@@ -74,7 +74,7 @@ const Anunturi = () => {
               </FormControl>
             </Grid>
 
-            <Grid item spacing={2} style={{ margin: "4em 6em" }}>
+            <Grid item>
               <Typography align="center" gutterBottom>
                 Categorie anunț
               </Typography>
@@ -88,8 +88,8 @@ const Anunturi = () => {
             </Grid>
           </Grid>
 
-          <Grid container spacing={2} style={{ margin: "0em 3.5em" }}>
-            <Grid item spacing={8} style={{ margin: "0em 3em" }}>
+          <Grid container>
+            <Grid item>
               <Typography align="center" gutterBottom>
                 Categorie produs
               </Typography>
@@ -112,33 +112,41 @@ const Anunturi = () => {
               </FormGroup>
             </Grid>
 
-            <Grid item spacing={2} style={{ margin: "0em 6em" }}>
+            <Grid item>
               <Typography align="center" gutterBottom></Typography>
               <FormGroup></FormGroup>
             </Grid>
           </Grid>
-          <Grid item spacing={2} style={{ margin: "3em 5em" }}>
+          <Grid item>
             <Button
-              style={{ width: " 30em", height: "8ch" }}
+              style={{
+                width: " 30em",
+                height: "8ch",
+                color: "#FFFFFF",
+                backgroundColor: "rgba(56, 129, 103, 1)",
+                padding: "0.5rem",
+              }}
               variant="outlined"
               href=""
+              className="button"
             >
               Căutare
             </Button>
           </Grid>
         </Grid>
 
-        <Grid item spacing={2} style={{ margin: "0em 6em" }}>
-          <Typography
-            style={{ margin: "0em 4em" }}
-            variant="subtitle1"
-            gutterBottom
-          >
+        <Grid item>
+          <Typography variant="subtitle1" gutterBottom>
             Ai un produs de donat sau vrei să găsești un donator?
             <Button
-              style={{ margin: "0em 1em" }}
               variant="outlined"
               href="/adaugaAnunt"
+              style={{
+                color: "#FFFFFF",
+                backgroundColor: "rgba(56, 129, 103, 1)",
+                padding: "0.5rem",
+              }}
+              className="button"
             >
               Adaugă anunț
             </Button>

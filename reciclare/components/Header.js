@@ -1,7 +1,6 @@
 import Link from "components/Link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
-import AccountCircle from "@mui/icons-material/AccountCircle";
 import Badge from "@mui/material/Badge";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import { useTheme } from "@material-ui/core/styles";
@@ -58,7 +57,14 @@ const Header = () => {
     <>
       <Grid container justify="center" spacing={2}>
         <Link href="/">
-          <Image alt="logo" href="/" src={logo} width={56} height={56} />
+          <Image
+            justify="left"
+            alt="logo"
+            href="/"
+            src={logo}
+            width={56}
+            height={56}
+          />
         </Link>
 
         {user &&

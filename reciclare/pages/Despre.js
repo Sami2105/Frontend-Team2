@@ -20,18 +20,15 @@ const DesprePage = () => {
       title="Despre"
     >
       <Grid align="center">
-        <h1 className="text-xl mb-1 font-semibold">Vrei să ne cunoști mai bine?</h1>
+        <h1 className="text-xl mb-1 font-semibold">
+          Vrei să ne cunoști mai bine?
+        </h1>
         <h2 className="text-xl mb-1 font-semibold">
           Descoperă aici cum a luat naștere acest proiect și care sunt
           intențiile noastre.
         </h2>
       </Grid>
-      <Grid
-        container
-        spacing={8}
-        justify="center"
-        style={{ margin: "1.2em 0" }}
-      >
+      <Grid container spacing={8} justify="center">
         <Grid item xs={4}>
           <h1 className="text-xl mb-1 font-semibold">
             Ne dorim să facem planeta un loc mai verde pentru o viață mai

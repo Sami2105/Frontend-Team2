@@ -1,13 +1,11 @@
 import React from "react";
-import { useForm } from "react-hook-form";
 import Layout from "components/layout/Layout";
 import Image from "next/image";
 import Articol1 from "/images/Articol1.png";
 import DoneOutlineIcon from "@mui/icons-material/DoneOutline";
-import {Grid} from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 
 const PrimulArticol = () => {
-
   return (
     <Layout
       // type your page title and page description.

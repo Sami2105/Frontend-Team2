@@ -33,12 +33,7 @@ const CampaniiReciclare = () => {
       <Typography variant="h1" align="center" gutterBottom>
         Campanii de reciclare
       </Typography>
-      <Grid
-        container
-        spacing={8}
-        justify="center"
-        style={{ margin: "0.5em 0" }}
-      >
+      <Grid container spacing={8} justify="center">
         <Grid item xs={4}>
           <Image
             alt="Campania2"
@@ -70,7 +65,7 @@ const CampaniiReciclare = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid container spacing={8} justify="center" style={{ margin: "0em 0" }}>
+      <Grid container spacing={8} justify="center">
         <Grid item xs={4}>
           <Image
             alt="Campania1"
@@ -103,12 +98,7 @@ const CampaniiReciclare = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid
-        container
-        spacing={8}
-        justify="center"
-        style={{ margin: "0.5em 0" }}
-      >
+      <Grid container spacing={8} justify="center">
         <Grid item xs={4}>
           <Image
             alt="Campania3"
