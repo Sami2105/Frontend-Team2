@@ -1,8 +1,6 @@
 import Link from "components/Link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
-import Badge from "@mui/material/Badge";
-import NotificationsIcon from "@mui/icons-material/Notifications";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import {
@@ -21,10 +19,9 @@ import logo from "/images/Logo.png";
 import Image from "next/image";
 import MenuIcon from "@material-ui/icons/Menu";
 import AccountMenu from "./layout/AccountMenu";
-
+import SignOut from "components/SignOut";
 import { routes } from "data/routes";
 import { useUser } from "./User";
-import SignOut from "./SignOut";
 import useClassStyles from "./styles/ClassStyles";
 
 function ElevationScroll(props) {
@@ -55,7 +52,7 @@ const Header = () => {
 
   const tabs = (
     <>
-      <Grid container justify="left" spacing={4}>
+      <Grid container justify="left" spacing={2}>
         <Link href="/">
           <Image
             alt="logo"
@@ -63,6 +60,7 @@ const Header = () => {
             src={logo}
             width={56}
             height={56}
+            margin={"0 0 0 5em"}
           />
         </Link>
 
@@ -83,7 +81,6 @@ const Header = () => {
               </Link>
             </Grid>
           ))}
-        {user && <SignOut />}
 
         {!user &&
           path.LOGGED_OUT.map(({ name, link }) => (
@@ -103,19 +100,9 @@ const Header = () => {
             </Grid>
           ))}
 
-        <IconButton
-         style={{margin: '0 0 0 13em'}}
-          aria-label="account of current user"
-          aria-controls="menu-appbar"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-
-        <AccountMenu />
+        <Grid item xs={2}>
+          <AccountMenu />
+        </Grid>
       </Grid>
     </>
   );

@@ -20,6 +20,13 @@ import {
   GoogleLoginButton,
   InstagramLoginButton,
 } from "react-social-login-buttons";
+import Error from "./ErrorMessage";
+import Layout from "./layout/Layout";
+import Avatar from "@mui/material/Avatar";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import DisplayError from "./ErrorMessage";
 
 const theme = createTheme();
 
@@ -52,12 +59,16 @@ export default function SignIn() {
     // refectch the currently logged in user
     refetchQueries: [{ query: CURRENT_USER_QUERY }],
   });
+
   async function handleSubmit(e) {
     e.preventDefault(); // stop the form from submitting
     console.log(inputs);
     const res = await signin();
     console.log(res);
-    router.push("/");
+    console.log({ data, loading, error });
+    if (res.data && res.data.authenticateUserWithPassword.code != "FAILURE") {
+      router.push("/");
+    }
     // Send the email and password to the graphqlAPI
   }
   const error =
@@ -68,7 +79,7 @@ export default function SignIn() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container >
+      <Container>
         <Box
           sx={{
             display: "flex",
@@ -88,7 +99,7 @@ export default function SignIn() {
           <Typography component="h1" variant="h5">
             Logare
           </Typography>
-
+          {<DisplayError error={error} />}
           <Box
             component="form"
             onSubmit={handleSubmit}
@@ -135,28 +146,6 @@ export default function SignIn() {
             >
               Logare
             </Button>
-            <div align=" center" style={{ color: "black" }}>
-              <Typography align=" center" variant="subtitle1" component="div">
-                Ți-ai uitat parola? <FormDialog className="button"></FormDialog>
-              </Typography>
-            </div>
-
-            <div>
-              <Typography variant="h6" component="div" align="center">
-                SAU
-              </Typography>{" "}
-            </div>
-
-            <div style={{margin:'0.5em 2em 0.5em 0.5em', width:'101%'}} >
-              <GoogleLoginButton onClick={() => alert("Hello")} />
-            </div>
-            <div style={{margin:'0.5em 2em 0.5em 0.5em', width:'101%'}}>
-              <FacebookLoginButton onClick={() => alert("Hello")} />
-            </div>
-            <div style={{margin:'0.5em 2em 0.5em 0.5em', width:'101%'}}>
-              <InstagramLoginButton onClick={() => alert("Hello")} />
-            </div>
-
             <div align=" center">
               <Typography align=" center" variant="subtitle1" component="div">
                 Nu ai un cont?
@@ -165,6 +154,16 @@ export default function SignIn() {
                 </Link>
               </Typography>
             </div>
+
+            <div align=" center" style={{ color: "black" }}>
+              <Typography align=" center" variant="subtitle1" component="div">
+                Ți-ai uitat parola?{" "}
+                <Link color="blue" underline="none" href="/reset">
+                  {"Recuperare parola"}
+                </Link>
+              </Typography>
+            </div>
+
             <Grid container mt>
               <Grid item xs></Grid>
               <Grid item></Grid>

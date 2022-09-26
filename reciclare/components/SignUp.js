@@ -13,6 +13,8 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+import DisplayError from "./ErrorMessage";
+
 const theme = createTheme();
 
 const SIGNUP_MUTATION = gql`
@@ -73,6 +75,13 @@ export default function SignUp() {
             Înregistrare
           </Typography>
 
+          {<DisplayError error={error}></DisplayError>}
+          {data?.createUser && (
+            <h3>
+              Te-ai inregistrat cu {data.createUser.email} - Acum poti intra in
+              contul tau!
+            </h3>
+          )}
           <Box
             component="form"
             onSubmit={handleSubmit}
