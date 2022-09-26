@@ -6,18 +6,15 @@ import theme from "theme";
 import { ApolloProvider } from "@apollo/client";
 import NProgress from "nprogress";
 import Router from "next/router";
-// import Page from '../components/Page';
-// import '../components/styles/nprogress.css';
 import withData from "../lib/withData";
-import 'styles/globals.css'
-import 'styles/Home.module.css'
+import "styles/globals.css";
+import "styles/Home.module.css";
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 function MyApp({ Component, pageProps, apollo }) {
   React.useEffect(() => {
-    // Remove the server-side injected CSS.
     const jssStyles = document.querySelector("#jss-server-side");
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
@@ -35,7 +32,6 @@ function MyApp({ Component, pageProps, apollo }) {
           />
         </Head>
         <ThemeProvider theme={theme}>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
           <Component {...pageProps} />
         </ThemeProvider>

@@ -1,161 +1,146 @@
 import Layout from "components/layout/Layout";
-import Cards from "components/layout/Card";
 import Button from "@mui/material/Button";
-import Pagination from "@mui/material/Pagination";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
 import Products from "../components/Products";
-import { Container, Grid, Typography, Avatar } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles((theme) => ({
-  snsIcon: {
-    width: "30px",
-    height: "30px",
-
-    [theme.breakpoints.down("xs")]: {
-      width: "25px",
-      height: "25px",
-    },
-    "&:hover": {
-      color: theme.palette.info.main,
-    },
-  },
-}));
+import { Grid, Typography } from "@material-ui/core";
 
 const Anunturi = () => {
-  const classes = useStyles();
-  // use your picture
-
   return (
-    <Layout
-      // type your page title and page description.
-      title="Anunțuri"
-      description="Unii donează, unii caută donatori."
-    >
-      <Grid container>
-        <Grid item>
-          <Typography align="center" variant="h1" gutterBottom>
-            Anunțuri <br></br>
-          </Typography>
+    <Layout title="Anunțuri" description="Unii donează, unii caută donatori.">
+      <Typography
+        style={{ margin: "2em 0 1em 0" }}
+        align="center"
+        variant="h1"
+        gutterBottom
+      >
+        Anunțuri
+      </Typography>
+      <Grid container spacing={1} row-spacing={1}>
+        <Grid item xs={10} spacing={1} s>
           <Typography align="center" variant="h5" gutterBottom>
-            Aici este locul perfect <br></br>
-            unde poți DONA produse dar și unde poți PRIMI <br></br>
-            prin donație produsele de care ai nevoie.
+            Aici este locul perfect unde poți DONA produse dar și unde poți
+            PRIMI prin donație produsele de care ai nevoie.
           </Typography>
-
-          <Grid container>
-            <Grid item>
-              <Typography align="center" gutterBottom>
-                Status anunț
-              </Typography>
-              <FormControl>
-                <RadioGroup
-                  aria-labelledby="demo-radio-buttons-group-label"
-                  defaultValue="female"
-                  name="radio-buttons-group"
-                >
-                  <FormControlLabel
-                    value="female"
-                    control={<Radio />}
-                    label="Activ"
-                  />
-                  <FormControlLabel
-                    value="male"
-                    control={<Radio />}
-                    label="Inactiv"
-                  />
-                </RadioGroup>
-              </FormControl>
-            </Grid>
-
-            <Grid item>
-              <Typography align="center" gutterBottom>
-                Categorie anunț
-              </Typography>
-              <FormGroup>
-                <FormControlLabel
-                  control={<Checkbox defaultChecked />}
-                  label="Donare"
-                />
-                <FormControlLabel control={<Checkbox />} label="Căutare" />
-              </FormGroup>
-            </Grid>
-          </Grid>
-
-          <Grid container>
-            <Grid item>
-              <Typography align="center" gutterBottom>
-                Categorie produs
-              </Typography>
-              <FormGroup>
-                <FormControlLabel
-                  control={<Checkbox defaultChecked />}
-                  label="Mobilă"
-                />
-                <FormControlLabel control={<Checkbox />} label="Mobilă" />
-                <FormControlLabel
-                  control={<Checkbox defaultChecked />}
-                  label="Mobilă"
-                />
-                <FormControlLabel control={<Checkbox />} label="Mobilă" />
-                <FormControlLabel
-                  control={<Checkbox defaultChecked />}
-                  label="Mobilă"
-                />
-                <FormControlLabel control={<Checkbox />} label="Mobilă" />
-              </FormGroup>
-            </Grid>
-
-            <Grid item>
-              <Typography align="center" gutterBottom></Typography>
-              <FormGroup></FormGroup>
-            </Grid>
-          </Grid>
-          <Grid item>
-            <Button
-              style={{
-                width: " 30em",
-                height: "8ch",
-                color: "#FFFFFF",
-                backgroundColor: "rgba(56, 129, 103, 1)",
-                padding: "0.5rem",
-              }}
-              variant="outlined"
-              href=""
-              className="button"
+        </Grid>
+        <Grid item xs={2} spacing={1}></Grid>
+        <Grid item xs={2} spacing={2}>
+          <Typography variant="h6" align="left" gutterLeft>
+            Status anunț
+          </Typography>
+          <FormControl>
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              defaultValue="female"
+              name="radio-buttons-group"
             >
-              Căutare
-            </Button>
-          </Grid>
+              <FormControlLabel
+                value="female"
+                control={<Radio />}
+                label="Activ"
+              />
+              <FormControlLabel
+                value="male"
+                control={<Radio />}
+                label="Inactiv"
+              />
+            </RadioGroup>
+          </FormControl>
         </Grid>
 
-        <Grid item>
-          <Typography variant="subtitle1" gutterBottom>
+        <Grid item xs={2} spacing={1} style={{ margin: "0 4em" }}>
+          <Typography variant="h6" align="left" gutterBottom>
+            Categorie anunț
+          </Typography>
+          <FormGroup>
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              defaultValue="female"
+              name="radio-buttons-group"
+            >
+              <FormControlLabel
+                value="female"
+                control={<Radio />}
+                label="Donez"
+              />
+              <FormControlLabel value="male" control={<Radio />} label="Caut" />
+            </RadioGroup>
+          </FormGroup>
+        </Grid>
+
+        <Grid item xs={2} spacing={1} style={{ margin: "0 4em" }}>
+          <Typography variant="h6" align="left" gutterBottom>
+            Categorie produs
+          </Typography>
+          <FormGroup>
+            <FormControlLabel
+              control={<Checkbox defaultChecked />}
+              label="Mobilă"
+            />
+            <FormControlLabel control={<Checkbox />} label="Electrocasnice" />
+            <FormControlLabel
+              control={<Checkbox defaultChecked />}
+              label="Bricolaj"
+            />
+            <FormControlLabel
+              control={<Checkbox defaultChecked />}
+              label="Îmbrăcaminte"
+            />
+          </FormGroup>
+        </Grid>
+        <Grid
+          item
+          xs={1}
+          spacing={1}
+          align="center"
+          style={{ margin: "1em 1em" }}
+        >
+          <Button
+            margin="normal"
+            fullWidth
+            variant="contained"
+            size="large"
+            style={{
+              color: "#FFFFFF",
+              backgroundColor: "rgba(56, 129, 103, 1)",
+              padding: "0.5rem",
+            }}
+          >
+            Căutare
+          </Button>
+        </Grid>
+
+        <Grid
+          item
+          xs={12}
+          spacing={2}
+          align="center"
+          style={{ margin: "2em 6em" }}
+        >
+          <Typography style={{ margin: "0em 4em" }} variant="h6" gutterBottom>
             Ai un produs de donat sau vrei să găsești un donator?
             <Button
-              variant="outlined"
-              href="/adaugaAnunt"
               style={{
+                margin: "0em 1em",
                 color: "#FFFFFF",
                 backgroundColor: "rgba(56, 129, 103, 1)",
                 padding: "0.5rem",
               }}
-              className="button"
+              variant="contained"
+              size="large"
+              href="/adaugaAnunt"
             >
               Adaugă anunț
             </Button>
-            <div>
-              <Products />
-            </div>
           </Typography>
         </Grid>
       </Grid>
+
+      <Products />
     </Layout>
   );
 };
