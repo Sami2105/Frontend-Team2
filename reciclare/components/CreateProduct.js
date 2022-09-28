@@ -53,7 +53,7 @@ export default function CreateProduct() {
     const res = await createProduct();
     clearForm();
     Router.push({
-      pathname: `/product/${res.data.createProduct.id}`,
+      pathname: `/anunturi`,
     });
   }
 
@@ -63,7 +63,7 @@ export default function CreateProduct() {
   }
 
   return (
-    <Layout title="Adaugă un anunt">
+    <Layout title="Adaugă un anunț">
       <Grid container spacing={2} justify="center">
         <Box
           sx={{
@@ -79,7 +79,7 @@ export default function CreateProduct() {
           noValidate
         >
           <Typography variant="h1" align="center" gutterBottom>
-            Adaugă un anunt
+            Adaugă un anunț
           </Typography>
           <Grid
             spacing={0}
@@ -134,7 +134,7 @@ export default function CreateProduct() {
                   padding: "0.5rem",
                 }}
               >
-                Upload image(s)
+                încarcă imagini
                 <input
                   hidden
                   accept="image/*"
@@ -162,7 +162,7 @@ export default function CreateProduct() {
                   padding: "0.5rem",
                 }}
               >
-                Adaugă un anunt
+                Adaugă un anunț
               </Button>
             </Grid>
           </Grid>

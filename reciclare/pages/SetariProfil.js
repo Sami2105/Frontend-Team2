@@ -16,11 +16,9 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import Snackbar from "@mui/material/Snackbar";
 import Profil from "components/layout/Profil";
 import { Grid, Typography, Avatar } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
 import { useTheme } from "@mui/material/styles";
 
 const setariProfil = () => {
-
   const StyledPaper = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
     ...theme.typography.body2,

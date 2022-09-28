@@ -10,7 +10,7 @@ export default function Problem({ problem }) {
         alt={problem.name}
       />
 
-      <Link href={`/RaporteazaProblema/${problem.id}`}>{problem.name}</Link>
+      <Link href={`/raporteazaProblema/${problem.id}`}>{problem.name}</Link>
 
       <p>{problem.description}</p>
       <div className="buttonList">

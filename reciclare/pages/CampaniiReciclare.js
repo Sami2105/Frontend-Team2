@@ -22,23 +22,21 @@ const useStyles = makeStyles((theme) => ({
 
 const CampaniiReciclare = () => {
   const classes = useStyles();
-  // use your picture
 
   return (
     <Layout
-      // type your page title and page description.
       title="Campanii de reciclare"
       description="Aici găsești campanii cu si despre reciclare. Implică-te!"
     >
-      <Typography variant="h1" align="center" style={{margin: '1.5em 0 1.5em 0'}} gutterBottom>
+      <Typography
+        variant="h1"
+        align="center"
+        style={{ margin: "1.5em 0 1.5em 0" }}
+        gutterBottom
+      >
         Campanii de reciclare
       </Typography>
-      <Grid
-        container
-        spacing={2}
-        justify="center"
-
-      >
+      <Grid container spacing={2} justify="center">
         <Grid item xs={6}>
           <Image
             alt="Campania2"
@@ -70,7 +68,7 @@ const CampaniiReciclare = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid container spacing={2} style={{margin:'1em 0'}} justify="center">
+      <Grid container spacing={2} style={{ margin: "1em 0" }} justify="center">
         <Grid item xs={6}>
           <Image
             alt="Campania1"
@@ -103,12 +101,7 @@ const CampaniiReciclare = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid
-        container
-        spacing={2}
-        justify="center"
-   
-      >
+      <Grid container spacing={2} justify="center">
         <Grid item xs={6}>
           <Image
             alt="Campania3"

@@ -6,7 +6,6 @@ import Articole from "components/layout/Articolele";
 const About = () => {
   return (
     <Layout
-      // type your page title and page description.
       title="Go green"
       description="Echipa Go Green își dorește o țără mai frumoasă"
     >
@@ -88,7 +87,9 @@ const About = () => {
       </Grid>
 
       <Grid container spacing={2} justify="center">
-        <h1 style={{margin: '1.8em 0 1.5em 0'}}>Fii la curent cu cele mai actuale articole de informare</h1>
+        <h1 style={{ margin: "1.8em 0 1.5em 0" }}>
+          Fii la curent cu cele mai actuale articole de informare
+        </h1>
       </Grid>
 
       <div>

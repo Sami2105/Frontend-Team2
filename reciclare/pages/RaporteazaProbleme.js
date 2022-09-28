@@ -49,7 +49,6 @@ const Raportează = () => {
 
   return (
     <Layout
-      // type your page title and page description.
       title="Raportează o problemă"
       description="Nu fi indiferent la probleme."
     >
@@ -70,8 +69,8 @@ const Raportează = () => {
           <Typography variant="h1" align="center" gutterBottom>
             Raportează o problemă
           </Typography>
-          <Grid spacing={0} align="center" justify="center">
-            <Grid spacing={0} align="center" justify="center">
+          <Grid align="center" justify="center">
+            <Grid align="center" justify="center">
               <div align="center">
                 <TextField
                   required
@@ -83,7 +82,7 @@ const Raportează = () => {
               </div>
             </Grid>
 
-            <Grid spacing={0} align="center" justify="center">
+            <Grid align="center" justify="center">
               <div align="center">
                 <TextField
                   required
@@ -119,7 +118,7 @@ const Raportează = () => {
               <DropZone data={data} dispatch={dispatch} />
             </Grid>
 
-            <Grid container spacing={0} justify="center">
+            <Grid container justify="center">
               <Button
                 style={{
                   width: " 69ch",

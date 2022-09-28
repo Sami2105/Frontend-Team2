@@ -47,9 +47,10 @@ export default function Product({ product }) {
               </Typography>
             </Grid>
             <Grid item>
-              <Typography sx={{ cursor: "pointer" }} variant="body2">
-                <DeleteProduct id={product.id}>Delete</DeleteProduct>
-              </Typography>
+              <Typography
+                sx={{ cursor: "pointer" }}
+                variant="body2"
+              ></Typography>
             </Grid>
           </Grid>
         </Grid>

@@ -3,7 +3,7 @@ import { createMuiTheme } from "@material-ui/core/styles";
 const mainBlack = "#C7DBD4";
 const mainWhite = "#272828";
 const blue = "#272828";
-// Create a theme instance.
+
 const theme = createMuiTheme({
   palette: {
     common: {

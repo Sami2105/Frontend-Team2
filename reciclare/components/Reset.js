@@ -1,8 +1,20 @@
 import gql from "graphql-tag";
 import { useMutation } from "@apollo/client";
-import Form from "./styles/Form";
 import useForm from "../lib/useForm";
+import Image from "next/image";
+import logo from "/images/Logo.png";
+import * as React from "react";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Link from "@mui/material/Link";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Error from "./ErrorMessage";
+import { CssBaseline } from "@material-ui/core";
+const theme = createTheme();
 
 const RESET_MUTATION = gql`
   mutation RESET_MUTATION(
@@ -35,47 +47,102 @@ export default function Reset({ token }) {
     : undefined;
   console.log(error);
   async function handleSubmit(e) {
-    e.preventDefault(); // stop the form from submitting
+    e.preventDefault();
     console.log(inputs);
     const res = await reset().catch(console.error);
     console.log(res);
     console.log({ data, loading, error });
     resetForm();
-    // Send the email and password to the graphqlAPI
   }
   return (
-    <Form method="POST" onSubmit={handleSubmit}>
-      <h2>Reset Your Password</h2>
-      <Error error={error || successfulError} />
-      <fieldset>
-        {data?.redeemUserPasswordResetToken === null && (
-          <p>Success! You can Now sign in</p>
-        )}
+    <ThemeProvider theme={theme}>
+      <Container>
+        <CssBaseline />
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <div>
+            <Image
+              alt="Logo"
+              align="center"
+              src={logo}
+              width={80}
+              height={80}
+            />
+          </div>
+          <Typography component="h1" variant="h5">
+            Resetează parola
+          </Typography>
+          <Error error={error || successfulError} />
 
-        <label htmlFor="email">
-          Email
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email Address"
-            autoComplete="email"
-            value={inputs.email}
-            onChange={handleChange}
-          />
-        </label>
-        <label htmlFor="password">
-          Password
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            autoComplete="password"
-            value={inputs.password}
-            onChange={handleChange}
-          />
-        </label>
-        <button type="submit">Request Reset!</button>
-      </fieldset>
-    </Form>
+          {data?.redeemUserPasswordResetToken === null && (
+            <>
+              <p>Success! Acum te poți autentifica</p>
+              <Link color="blue" underline="none" href="/signin">
+                {"Logare"}
+              </Link>
+            </>
+          )}
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            noValidate
+            sx={{ m: 1 }}
+          >
+            <TextField
+              required
+              fullWidth
+              id="email"
+              label="Adresa de mail"
+              type="email"
+              name="email"
+              autoComplete="email"
+              autoFocus
+              value={inputs.email}
+              onChange={handleChange}
+              sx={{ m: 1 }}
+            />
+            <TextField
+              required
+              fullWidth
+              name="password"
+              label="Parola"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              value={inputs.password}
+              onChange={handleChange}
+              sx={{ m: 1 }}
+            />
+            <Button
+              type="submit"
+              required
+              fullWidth
+              variant="contained"
+              size="large"
+              style={{
+                color: "#FFFFFF",
+                backgroundColor: "rgba(56, 129, 103, 1)",
+                padding: "0.5rem",
+                margin: "0.5rem",
+              }}
+              className="button"
+            >
+              Resetează
+            </Button>
+            <Grid container mt>
+              <Grid item xs></Grid>
+              <Grid item></Grid>
+            </Grid>
+          </Box>
+
+          <Typography variant="h6" align="center" component="div"></Typography>
+        </Box>
+      </Container>
+    </ThemeProvider>
   );
 }

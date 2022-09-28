@@ -12,28 +12,10 @@ import Alert from "@mui/material/Alert";
 import * as React from "react";
 import Profil from "components/layout/Profil";
 
-import { Container, Grid, Typography, Avatar } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({
-  snsIcon: {
-    width: "30px",
-    height: "30px",
-
-    [theme.breakpoints.down("xs")]: {
-      width: "25px",
-      height: "25px",
-    },
-    "&:hover": {
-      color: theme.palette.info.main,
-    },
-  },
-}));
-
 const setariNotificari = () => {
-  const classes = useStyles();
-  // use your picture
-
   const [state, setState] = React.useState({
     a: false,
     b: false,
@@ -62,10 +44,7 @@ const setariNotificari = () => {
   };
 
   return (
-    <Layout
-      // type your page title and page description.
-      title=" Setări Notificări "
-    >
+    <Layout title=" Setări Notificări ">
       <Grid container spacing={8}>
         <Grid item>
           <Profil></Profil>
@@ -73,13 +52,22 @@ const setariNotificari = () => {
 
         <Grid item>
           <FormControl component="fieldset" variant="standard">
-            <FormLabel style={{color:'#388167'}} component="legend" variant="h2">
+            <FormLabel
+              style={{ color: "#388167" }}
+              component="legend"
+              variant="h2"
+            >
               Notificări
             </FormLabel>
             <FormGroup>
               <FormControlLabel
                 control={
-                  <Switch style={{color:'#388167'}} checked={state.a} onChange={handleChange} name="a" />
+                  <Switch
+                    style={{ color: "#388167" }}
+                    checked={state.a}
+                    onChange={handleChange}
+                    name="a"
+                  />
                 }
                 label="Email"
               />
@@ -89,7 +77,12 @@ const setariNotificari = () => {
               </FormHelperText>
               <FormControlLabel
                 control={
-                  <Switch style={{color:'#388167'}} checked={state.b} onChange={handleChange} name="b" />
+                  <Switch
+                    style={{ color: "#388167" }}
+                    checked={state.b}
+                    onChange={handleChange}
+                    name="b"
+                  />
                 }
                 label="Anunțuri donații"
               />
@@ -99,7 +92,12 @@ const setariNotificari = () => {
               </FormHelperText>
               <FormControlLabel
                 control={
-                  <Switch style={{color:'#388167'}} checked={state.c} onChange={handleChange} name="c" />
+                  <Switch
+                    style={{ color: "#388167" }}
+                    checked={state.c}
+                    onChange={handleChange}
+                    name="c"
+                  />
                 }
                 label="Anunțuri campanii"
               />
